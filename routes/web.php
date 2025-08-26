@@ -2,7 +2,19 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Middleware\AdminMiddleware;
-use App\Http\Controllers\Admin\DashboardController;
+use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\DataBankController;
+use App\Http\Controllers\CustomerController;
+use App\Http\Controllers\PrincipalController;
+use App\Http\Controllers\ProductController;
+use App\Http\Controllers\QuotationController;
+use App\Http\Controllers\IndentController;
+use App\Http\Controllers\LetterOfCreditController;
+use App\Http\Controllers\ShipmentController;
+use App\Http\Controllers\DebitNoteController;
+use App\Http\Controllers\FinanceController;
+use App\Http\Controllers\ReportController;
+use App\Http\Controllers\AdminController;
 use App\Http\Controllers\Admin\Auth\LoginController;
 use App\Http\Controllers\Admin\Auth\RegisterController;
 use App\Http\Controllers\Admin\Auth\ResetPasswordController;
@@ -30,7 +42,53 @@ Route::middleware([AdminMiddleware::class])->group(function () {
     // Dashboard
     Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
 
-    // users
+    // Data Bank & Sourcing
+    Route::prefix('data-bank')->name('dataBank.')->group(function () {
+        Route::get('/', [DataBankController::class, 'index'])->name('index');
+    });
+
+    // CRM
+    Route::prefix('crm')->name('crm.')->group(function () {
+        Route::resource('customers', CustomerController::class)->only(['index', 'show']);
+        Route::resource('principals', PrincipalController::class)->only(['index', 'show']);
+        Route::resource('products', ProductController::class)->only(['index', 'show']);
+    });
+
+    // Sales Ops
+    Route::resource('quotations', QuotationController::class)->only(['index', 'show']);
+    Route::get('quotations/{quotation}/go-to-indent', [QuotationController::class, 'goToIndent'])->name('quotations.goToIndent');
+
+    Route::resource('indents', IndentController::class)->only(['index', 'show']);
+    Route::get('indents/{indent}/go-to-lc', [IndentController::class, 'goToLc'])->name('indents.goToLc');
+
+    Route::resource('lcs', LetterOfCreditController::class)->only(['index', 'show']);
+    Route::get('lcs/{lc}/go-to-shipment', [LetterOfCreditController::class, 'goToShipment'])->name('lcs.goToShipment');
+
+    // Logistics
+    Route::resource('shipments', ShipmentController::class)->only(['index', 'show']);
+    Route::get('shipments/{shipment}/go-to-debit-note', [ShipmentController::class, 'goToDebitNote'])->name('shipments.goToDebitNote');
+
+    // Finance
+    Route::resource('debit-notes', DebitNoteController::class)->only(['index', 'show']);
+    Route::prefix('finance')->name('finance.')->group(function () {
+        Route::get('accounts', [FinanceController::class, 'accounts'])->name('accounts');
+    });
+
+    // Reports
+    Route::prefix('reports')->name('reports.')->group(function () {
+        Route::get('/', [ReportController::class, 'index'])->name('index');
+        Route::get('export/{slug}', [ReportController::class, 'export'])->name('export');
+    });
+
+    // Admin
+    Route::prefix('admin')->name('admin.')->group(function () {
+        Route::get('teams', [AdminController::class, 'teams'])->name('teams');
+        Route::get('users', [AdminController::class, 'users'])->name('users');
+        Route::get('parameters', [AdminController::class, 'parameters'])->name('parameters');
+        Route::get('branding', [AdminController::class, 'branding'])->name('branding');
+    });
+
+    // Legacy routes (keeping for compatibility)
     Route::resource('users', UserController::class);
 });
 

@@ -8,6 +8,7 @@ use Illuminate\Contracts\Auth\CanResetPassword;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Auth\Passwords\CanResetPassword as CanResetPasswordTrait;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class User extends Authenticatable implements CanResetPassword
 {
@@ -31,6 +32,8 @@ class User extends Authenticatable implements CanResetPassword
         'password',
         'is_active',
         'is_admin',
+        'role',
+        'team_id',
     ];
 
     /**
@@ -53,6 +56,7 @@ class User extends Authenticatable implements CanResetPassword
         return [
             'email_verified_at' => 'datetime',
             'password' => 'hashed',
+            'role' => \App\Enums\UserRole::class,
         ];
     }
 
@@ -69,5 +73,25 @@ class User extends Authenticatable implements CanResetPassword
     public function scopeAdmin()
     {
         return $this->where('is_admin', true);
+    }
+
+    public function team(): BelongsTo
+    {
+        return $this->belongsTo(Team::class);
+    }
+
+    public function isSuperAdmin(): bool
+    {
+        return $this->role === \App\Enums\UserRole::SUPER_ADMIN;
+    }
+
+    public function isAdmin(): bool
+    {
+        return $this->role === \App\Enums\UserRole::ADMIN;
+    }
+
+    public function isStaff(): bool
+    {
+        return $this->role === \App\Enums\UserRole::STAFF;
     }
 }
