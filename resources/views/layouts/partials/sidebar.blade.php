@@ -143,8 +143,8 @@
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link text-dark {{ request()->routeIs('finance.accounts') ? 'active' : '' }}"
-                                    href="{{ route('finance.accounts') }}">
+                                <a class="nav-link text-dark {{ request()->routeIs('finance.accounts.*') ? 'active' : '' }}"
+                                    href="{{ route('finance.accounts.index') }}">
                                     <span class="nav-link-text ms-1">Accounts Summary</span>
                                 </a>
                             </li>
@@ -211,4 +211,3 @@
         </ul>
     </div>
 </aside>
-

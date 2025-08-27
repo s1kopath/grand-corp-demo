@@ -116,14 +116,15 @@ Staff:      staff@grand.test / password
 
 ### **5. Reports**
 
--   **Reports Index**: `/reports` → 8 predefined reports
+-   **Reports Index**: `/reports` → 8 predefined business reports
 -   **Export Demo**: `/reports/export/{slug}` → Downloads sample files
 
 ### **6. Admin Modules**
 
--   **Teams & Users**: `/admin/teams` → View team structure
--   **Parameters**: `/admin/parameters` → View system parameters
--   **Branding**: `/admin/branding` → View company branding (SuperAdmin only)
+-   **Teams Management**: `/admin/teams` → View team structure and hierarchy
+-   **Users Management**: `/admin/users` → View user accounts and roles
+-   **System Parameters**: `/admin/parameters` → View system configuration
+-   **Company Branding**: `/admin/branding` → View company branding (SuperAdmin only)
 
 ## 🎨 UI/UX Features
 

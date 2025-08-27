@@ -2,6 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Team;
+use App\Models\User;
+use App\Models\Parameter;
+use App\Models\Branding;
 use Illuminate\Http\Request;
 
 class AdminController extends Controller
@@ -64,21 +68,56 @@ class AdminController extends Controller
 
     public function teams()
     {
-        //
+        $teams = Team::with(['users', 'manager'])->get();
+        $teamStats = [
+            'total_teams' => Team::count(),
+            'total_users' => User::count(),
+            'active_teams' => Team::where('status', 'active')->count(),
+            'teams_with_manager' => Team::whereHas('manager')->count(),
+        ];
+
+        return view('admin.teams.index', compact('teams', 'teamStats'));
     }
 
     public function users()
     {
-        //
+        $users = User::with(['team', 'role'])->orderBy('created_at', 'desc')->get();
+        $userStats = [
+            'total_users' => User::count(),
+            'super_admins' => User::where('role', 'super_admin')->count(),
+            'admins' => User::where('role', 'admin')->count(),
+            'staff' => User::where('role', 'staff')->count(),
+            'active_users' => User::where('status', 'active')->count(),
+            'recent_logins' => User::where('last_login_at', '>=', now()->subDays(7))->count(),
+        ];
+
+        return view('admin.users.index', compact('users', 'userStats'));
     }
 
     public function parameters()
     {
-        //
+        $parameters = Parameter::all()->groupBy('category');
+        $parameterStats = [
+            'total_parameters' => Parameter::count(),
+            'categories' => Parameter::distinct('category')->count(),
+            'system_params' => Parameter::where('category', 'system')->count(),
+            'business_params' => Parameter::where('category', 'business')->count(),
+            'last_updated' => Parameter::max('updated_at'),
+        ];
+
+        return view('admin.parameters.index', compact('parameters', 'parameterStats'));
     }
 
     public function branding()
     {
-        //
+        $branding = Branding::first();
+        $brandingStats = [
+            'logo_configured' => !empty($branding->logo_url),
+            'favicon_configured' => !empty($branding->favicon_url),
+            'color_scheme' => $branding->color_scheme ?? 'default',
+            'last_updated' => $branding->updated_at ?? null,
+        ];
+
+        return view('admin.branding.index', compact('branding', 'brandingStats'));
     }
 }

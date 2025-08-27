@@ -2,63 +2,68 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Quotation;
 use Illuminate\Http\Request;
 
 class QuotationController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
-    public function index()
+    public function index(Request $request)
     {
-        //
+        $query = Quotation::with(['customer', 'items']);
+
+        // Search functionality
+        if ($request->filled('search')) {
+            $search = $request->search;
+            $query->where(function ($q) use ($search) {
+                $q->where('quotation_number', 'like', "%{$search}%")
+                    ->orWhereHas('customer', function ($customerQuery) use ($search) {
+                        $customerQuery->where('name', 'like', "%{$search}%")
+                            ->orWhere('company', 'like', "%{$search}%");
+                    });
+            });
+        }
+
+        // Filter by status
+        if ($request->filled('status')) {
+            $query->where('status', $request->status);
+        }
+
+        // Filter by date range
+        if ($request->filled('date_from')) {
+            $query->where('quotation_date', '>=', $request->date_from);
+        }
+        if ($request->filled('date_to')) {
+            $query->where('quotation_date', '<=', $request->date_to);
+        }
+
+        $quotations = $query->orderBy('quotation_date', 'desc')->paginate(15);
+
+        return view('quotations.index', compact('quotations'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
+    public function show(Quotation $quotation)
     {
-        //
+        // Load related data for the quotation
+        $quotation->load(['customer', 'items.product', 'items.principal']);
+
+        return view('quotations.show', compact('quotation'));
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
-    public function store(Request $request)
+    public function goToIndent(Quotation $quotation)
     {
-        //
-    }
+        // This is a demo method that navigates to the indent workflow
+        // In a real application, this would create an indent from the quotation
 
-    /**
-     * Display the specified resource.
-     */
-    public function show(string $id)
-    {
-        //
-    }
+        // Find the first indent for demo purposes
+        $indent = $quotation->indents->first();
 
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(string $id)
-    {
-        //
-    }
+        if ($indent) {
+            return redirect()->route('indents.show', $indent)
+                ->with('success', 'Navigated to Indent from Quotation #' . $quotation->quotation_number);
+        }
 
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, string $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(string $id)
-    {
-        //
+        // If no indent exists, redirect to indents index
+        return redirect()->route('indents.index')
+            ->with('info', 'No indent found for Quotation #' . $quotation->quotation_number . '. Please create one.');
     }
 }

@@ -12,7 +12,7 @@ use App\Http\Controllers\IndentController;
 use App\Http\Controllers\LetterOfCreditController;
 use App\Http\Controllers\ShipmentController;
 use App\Http\Controllers\DebitNoteController;
-use App\Http\Controllers\FinanceController;
+use App\Http\Controllers\AccountsController;
 use App\Http\Controllers\ReportController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\Admin\Auth\LoginController;
@@ -71,7 +71,7 @@ Route::middleware([AdminMiddleware::class])->group(function () {
     // Finance
     Route::resource('debit-notes', DebitNoteController::class)->only(['index', 'show']);
     Route::prefix('finance')->name('finance.')->group(function () {
-        Route::get('accounts', [FinanceController::class, 'accounts'])->name('accounts');
+        Route::get('accounts', [AccountsController::class, 'index'])->name('accounts.index');
     });
 
     // Reports

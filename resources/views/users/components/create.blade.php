@@ -10,28 +10,28 @@
                 <span class="text-danger">*</span>
             </label>
             <input type="name" class="form-control border rounded-3" id="name" name="name"
-                placeholder="Enter name" required>
+                title="Enter name" required>
         </div>
         <div class="mb-1">
             <label for="email" class="form-label">Email
                 <span class="text-danger">*</span>
             </label>
             <input type="email" class="form-control border rounded-3" id="email" name="email"
-                placeholder="Enter email" required>
+                title="Enter email" required>
         </div>
         <div class="mb-1">
             <label for="phone" class="form-label">Phone
                 <span class="text-muted">(Optional)</span>
             </label>
             <input type="phone" class="form-control border rounded-3" id="phone" name="phone"
-                placeholder="Enter phone">
+                title="Enter phone">
         </div>
         <div class="mb-1">
             <label for="password" class="form-label">Password
                 <span class="text-danger">*</span>
             </label>
             <input type="password" class="form-control border rounded-3" id="password" name="password"
-                placeholder="********" required>
+                title="********" required>
         </div>
         <div class="mb-1">
             <label for="is_active" class="form-label">Status</label>
