@@ -35,10 +35,6 @@ class PoliciesServiceProvider extends ServiceProvider
             return in_array($user->role, [UserRole::SUPER_ADMIN, UserRole::ADMIN]);
         });
 
-        Gate::define('manageBranding', function ($user) {
-            return $user->role === UserRole::SUPER_ADMIN;
-        });
-
         Gate::define('manageUsers', function ($user) {
             return in_array($user->role, [UserRole::SUPER_ADMIN, UserRole::ADMIN]);
         });

@@ -16,49 +16,89 @@ class ProductFactory extends Factory
      */
     public function definition(): array
     {
-        $categories = ['Electronics', 'Textiles', 'Machinery', 'Chemicals', 'Food & Beverages', 'Automotive'];
-        $uoms = ['PCS', 'KG', 'MTR', 'LTR', 'BOX', 'TON'];
+        $categories = ['Antibiotics', 'Analgesics', 'Cardiovascular', 'Diabetes', 'Oncology', 'Vaccines', 'OTC Medicines', 'Medical Devices', 'Surgical Supplies', 'Diagnostic Kits'];
+        $uoms = ['TAB', 'CAP', 'VIAL', 'AMP', 'BOTTLE', 'PACK', 'BOX', 'KIT', 'PCS', 'MG', 'ML'];
 
         $products = [
-            ['name' => 'LED TV 55"', 'category' => 'Electronics', 'uom' => 'PCS'],
-            ['name' => 'Smartphone Galaxy S21', 'category' => 'Electronics', 'uom' => 'PCS'],
-            ['name' => 'Laptop Dell XPS', 'category' => 'Electronics', 'uom' => 'PCS'],
-            ['name' => 'Cotton Fabric', 'category' => 'Textiles', 'uom' => 'MTR'],
-            ['name' => 'Silk Scarf', 'category' => 'Textiles', 'uom' => 'PCS'],
-            ['name' => 'Denim Jeans', 'category' => 'Textiles', 'uom' => 'PCS'],
-            ['name' => 'Industrial Pump', 'category' => 'Machinery', 'uom' => 'PCS'],
-            ['name' => 'Conveyor Belt', 'category' => 'Machinery', 'uom' => 'MTR'],
-            ['name' => 'Hydraulic Cylinder', 'category' => 'Machinery', 'uom' => 'PCS'],
-            ['name' => 'Sulfuric Acid', 'category' => 'Chemicals', 'uom' => 'LTR'],
-            ['name' => 'Sodium Hydroxide', 'category' => 'Chemicals', 'uom' => 'KG'],
-            ['name' => 'Polyethylene', 'category' => 'Chemicals', 'uom' => 'KG'],
-            ['name' => 'Coffee Beans', 'category' => 'Food & Beverages', 'uom' => 'KG'],
-            ['name' => 'Olive Oil', 'category' => 'Food & Beverages', 'uom' => 'LTR'],
-            ['name' => 'Wine Red', 'category' => 'Food & Beverages', 'uom' => 'LTR'],
-            ['name' => 'Car Engine Parts', 'category' => 'Automotive', 'uom' => 'PCS'],
-            ['name' => 'Tire Set', 'category' => 'Automotive', 'uom' => 'SET'],
-            ['name' => 'Brake Pads', 'category' => 'Automotive', 'uom' => 'PCS'],
-            ['name' => 'Wireless Headphones', 'category' => 'Electronics', 'uom' => 'PCS'],
-            ['name' => 'Tablet iPad Pro', 'category' => 'Electronics', 'uom' => 'PCS'],
-            ['name' => 'Gaming Console', 'category' => 'Electronics', 'uom' => 'PCS'],
-            ['name' => 'Wool Sweater', 'category' => 'Textiles', 'uom' => 'PCS'],
-            ['name' => 'Leather Jacket', 'category' => 'Textiles', 'uom' => 'PCS'],
-            ['name' => 'Synthetic Fiber', 'category' => 'Textiles', 'uom' => 'KG'],
-            ['name' => 'CNC Machine', 'category' => 'Machinery', 'uom' => 'PCS'],
-            ['name' => 'Welding Equipment', 'category' => 'Machinery', 'uom' => 'PCS'],
-            ['name' => 'Compressor', 'category' => 'Machinery', 'uom' => 'PCS'],
-            ['name' => 'Nitric Acid', 'category' => 'Chemicals', 'uom' => 'LTR'],
-            ['name' => 'Ammonia', 'category' => 'Chemicals', 'uom' => 'KG'],
-            ['name' => 'PVC Resin', 'category' => 'Chemicals', 'uom' => 'KG'],
-            ['name' => 'Tea Leaves', 'category' => 'Food & Beverages', 'uom' => 'KG'],
-            ['name' => 'Honey', 'category' => 'Food & Beverages', 'uom' => 'KG'],
-            ['name' => 'Cheese', 'category' => 'Food & Beverages', 'uom' => 'KG'],
-            ['name' => 'Transmission System', 'category' => 'Automotive', 'uom' => 'PCS'],
-            ['name' => 'Battery Pack', 'category' => 'Automotive', 'uom' => 'PCS'],
-            ['name' => 'Air Filter', 'category' => 'Automotive', 'uom' => 'PCS'],
-            ['name' => 'Solar Panel', 'category' => 'Electronics', 'uom' => 'PCS'],
-            ['name' => 'Drone Camera', 'category' => 'Electronics', 'uom' => 'PCS'],
-            ['name' => 'Smart Watch', 'category' => 'Electronics', 'uom' => 'PCS'],
+            // Antibiotics
+            ['name' => 'Amoxicillin 500mg', 'category' => 'Antibiotics', 'uom' => 'TAB'],
+            ['name' => 'Ciprofloxacin 250mg', 'category' => 'Antibiotics', 'uom' => 'TAB'],
+            ['name' => 'Azithromycin 500mg', 'category' => 'Antibiotics', 'uom' => 'TAB'],
+            ['name' => 'Ceftriaxone 1g', 'category' => 'Antibiotics', 'uom' => 'VIAL'],
+            ['name' => 'Doxycycline 100mg', 'category' => 'Antibiotics', 'uom' => 'CAP'],
+            ['name' => 'Metronidazole 400mg', 'category' => 'Antibiotics', 'uom' => 'TAB'],
+
+            // Analgesics
+            ['name' => 'Paracetamol 500mg', 'category' => 'Analgesics', 'uom' => 'TAB'],
+            ['name' => 'Ibuprofen 400mg', 'category' => 'Analgesics', 'uom' => 'TAB'],
+            ['name' => 'Diclofenac 50mg', 'category' => 'Analgesics', 'uom' => 'TAB'],
+            ['name' => 'Tramadol 50mg', 'category' => 'Analgesics', 'uom' => 'CAP'],
+            ['name' => 'Morphine 10mg', 'category' => 'Analgesics', 'uom' => 'AMP'],
+            ['name' => 'Codeine 30mg', 'category' => 'Analgesics', 'uom' => 'TAB'],
+
+            // Cardiovascular
+            ['name' => 'Amlodipine 5mg', 'category' => 'Cardiovascular', 'uom' => 'TAB'],
+            ['name' => 'Atenolol 50mg', 'category' => 'Cardiovascular', 'uom' => 'TAB'],
+            ['name' => 'Lisinopril 10mg', 'category' => 'Cardiovascular', 'uom' => 'TAB'],
+            ['name' => 'Simvastatin 20mg', 'category' => 'Cardiovascular', 'uom' => 'TAB'],
+            ['name' => 'Aspirin 100mg', 'category' => 'Cardiovascular', 'uom' => 'TAB'],
+            ['name' => 'Warfarin 5mg', 'category' => 'Cardiovascular', 'uom' => 'TAB'],
+
+            // Diabetes
+            ['name' => 'Metformin 500mg', 'category' => 'Diabetes', 'uom' => 'TAB'],
+            ['name' => 'Gliclazide 80mg', 'category' => 'Diabetes', 'uom' => 'TAB'],
+            ['name' => 'Insulin Regular', 'category' => 'Diabetes', 'uom' => 'VIAL'],
+            ['name' => 'Insulin NPH', 'category' => 'Diabetes', 'uom' => 'VIAL'],
+            ['name' => 'Glimepiride 1mg', 'category' => 'Diabetes', 'uom' => 'TAB'],
+            ['name' => 'Pioglitazone 15mg', 'category' => 'Diabetes', 'uom' => 'TAB'],
+
+            // Oncology
+            ['name' => 'Cisplatin 50mg', 'category' => 'Oncology', 'uom' => 'VIAL'],
+            ['name' => 'Paclitaxel 30mg', 'category' => 'Oncology', 'uom' => 'VIAL'],
+            ['name' => 'Doxorubicin 10mg', 'category' => 'Oncology', 'uom' => 'VIAL'],
+            ['name' => 'Cyclophosphamide 500mg', 'category' => 'Oncology', 'uom' => 'VIAL'],
+            ['name' => 'Methotrexate 50mg', 'category' => 'Oncology', 'uom' => 'VIAL'],
+            ['name' => '5-Fluorouracil 500mg', 'category' => 'Oncology', 'uom' => 'VIAL'],
+
+            // Vaccines
+            ['name' => 'COVID-19 Vaccine', 'category' => 'Vaccines', 'uom' => 'VIAL'],
+            ['name' => 'Hepatitis B Vaccine', 'category' => 'Vaccines', 'uom' => 'VIAL'],
+            ['name' => 'Influenza Vaccine', 'category' => 'Vaccines', 'uom' => 'VIAL'],
+            ['name' => 'MMR Vaccine', 'category' => 'Vaccines', 'uom' => 'VIAL'],
+            ['name' => 'Tetanus Vaccine', 'category' => 'Vaccines', 'uom' => 'VIAL'],
+            ['name' => 'BCG Vaccine', 'category' => 'Vaccines', 'uom' => 'VIAL'],
+
+            // OTC Medicines
+            ['name' => 'Vitamin C 500mg', 'category' => 'OTC Medicines', 'uom' => 'TAB'],
+            ['name' => 'Calcium 500mg', 'category' => 'OTC Medicines', 'uom' => 'TAB'],
+            ['name' => 'Iron 65mg', 'category' => 'OTC Medicines', 'uom' => 'TAB'],
+            ['name' => 'Zinc 50mg', 'category' => 'OTC Medicines', 'uom' => 'TAB'],
+            ['name' => 'Folic Acid 5mg', 'category' => 'OTC Medicines', 'uom' => 'TAB'],
+            ['name' => 'Multivitamin', 'category' => 'OTC Medicines', 'uom' => 'TAB'],
+
+            // Medical Devices
+            ['name' => 'Syringe 5ml', 'category' => 'Medical Devices', 'uom' => 'PCS'],
+            ['name' => 'Needle 21G', 'category' => 'Medical Devices', 'uom' => 'PCS'],
+            ['name' => 'IV Cannula 18G', 'category' => 'Medical Devices', 'uom' => 'PCS'],
+            ['name' => 'Catheter Foley', 'category' => 'Medical Devices', 'uom' => 'PCS'],
+            ['name' => 'Glucometer', 'category' => 'Medical Devices', 'uom' => 'PCS'],
+            ['name' => 'Blood Pressure Monitor', 'category' => 'Medical Devices', 'uom' => 'PCS'],
+
+            // Surgical Supplies
+            ['name' => 'Surgical Gloves L', 'category' => 'Surgical Supplies', 'uom' => 'BOX'],
+            ['name' => 'Surgical Mask', 'category' => 'Surgical Supplies', 'uom' => 'BOX'],
+            ['name' => 'Gauze Bandage', 'category' => 'Surgical Supplies', 'uom' => 'ROLL'],
+            ['name' => 'Surgical Tape', 'category' => 'Surgical Supplies', 'uom' => 'ROLL'],
+            ['name' => 'Sutures 3-0', 'category' => 'Surgical Supplies', 'uom' => 'PACK'],
+            ['name' => 'Scalpel Blade #10', 'category' => 'Surgical Supplies', 'uom' => 'PCS'],
+
+            // Diagnostic Kits
+            ['name' => 'Pregnancy Test Kit', 'category' => 'Diagnostic Kits', 'uom' => 'KIT'],
+            ['name' => 'Malaria Test Kit', 'category' => 'Diagnostic Kits', 'uom' => 'KIT'],
+            ['name' => 'HIV Test Kit', 'category' => 'Diagnostic Kits', 'uom' => 'KIT'],
+            ['name' => 'Blood Glucose Test Strips', 'category' => 'Diagnostic Kits', 'uom' => 'PACK'],
+            ['name' => 'Urine Test Strips', 'category' => 'Diagnostic Kits', 'uom' => 'PACK'],
+            ['name' => 'COVID-19 Rapid Test', 'category' => 'Diagnostic Kits', 'uom' => 'KIT'],
         ];
 
         $product = $this->faker->unique()->randomElement($products);

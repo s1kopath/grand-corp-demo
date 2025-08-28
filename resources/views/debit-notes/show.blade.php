@@ -14,7 +14,7 @@
                             </div>
                             <div class="col-6 text-end">
                                 <a href="{{ route('debit-notes.index') }}" class="btn btn-sm btn-outline-light me-3">
-                                    <i class="material-icons text-sm me-1">arrow_back</i>Back to List
+                                    <i class="material-symbols-rounded text-sm me-1">arrow_back</i>Back to List
                                 </a>
                             </div>
                         </div>
@@ -276,20 +276,23 @@
                                         <tr>
                                             <td colspan="3" class="text-end"><strong>Subtotal:</strong></td>
                                             <td class="text-center">
-                                                <strong>${{ number_format($debitNote->subtotal, 2) }}</strong></td>
+                                                <strong>${{ number_format($debitNote->subtotal, 2) }}</strong>
+                                            </td>
                                             <td></td>
                                         </tr>
                                         <tr>
                                             <td colspan="3" class="text-end"><strong>Tax
                                                     ({{ $debitNote->tax_rate ?? 0 }}%):</strong></td>
                                             <td class="text-center">
-                                                <strong>${{ number_format($debitNote->tax_amount, 2) }}</strong></td>
+                                                <strong>${{ number_format($debitNote->tax_amount, 2) }}</strong>
+                                            </td>
                                             <td></td>
                                         </tr>
                                         <tr>
                                             <td colspan="3" class="text-end"><strong>Total:</strong></td>
                                             <td class="text-center">
-                                                <strong>${{ number_format($debitNote->total_amount, 2) }}</strong></td>
+                                                <strong>${{ number_format($debitNote->total_amount, 2) }}</strong>
+                                            </td>
                                             <td></td>
                                         </tr>
                                     </tfoot>
@@ -414,7 +417,7 @@
                             <div class="timeline timeline-one-side">
                                 <div class="timeline-block mb-3">
                                     <span class="timeline-step">
-                                        <i class="material-icons text-success text-gradient">check_circle</i>
+                                        <i class="material-symbols-rounded text-success text-gradient">check_circle</i>
                                     </span>
                                     <div class="timeline-content">
                                         <h6 class="text-dark text-sm font-weight-bold mb-0">Shipment Completed</h6>
@@ -426,9 +429,9 @@
                                 <div class="timeline-block mb-3">
                                     <span class="timeline-step">
                                         @if ($debitNote->status === 'pending')
-                                            <i class="material-icons text-warning text-gradient">pending</i>
+                                            <i class="material-symbols-rounded text-warning text-gradient">pending</i>
                                         @else
-                                            <i class="material-icons text-success text-gradient">check_circle</i>
+                                            <i class="material-symbols-rounded text-success text-gradient">check_circle</i>
                                         @endif
                                     </span>
                                     <div class="timeline-content">
@@ -441,11 +444,11 @@
                                 <div class="timeline-block mb-3">
                                     <span class="timeline-step">
                                         @if ($debitNote->status === 'approved')
-                                            <i class="material-icons text-success text-gradient">check_circle</i>
+                                            <i class="material-symbols-rounded text-success text-gradient">check_circle</i>
                                         @elseif($debitNote->status === 'cancelled')
-                                            <i class="material-icons text-danger text-gradient">cancel</i>
+                                            <i class="material-symbols-rounded text-danger text-gradient">cancel</i>
                                         @else
-                                            <i class="material-icons text-warning text-gradient">pending</i>
+                                            <i class="material-symbols-rounded text-warning text-gradient">pending</i>
                                         @endif
                                     </span>
                                     <div class="timeline-content">
@@ -464,7 +467,7 @@
                                 @if ($debitNote->status === 'paid')
                                     <div class="timeline-block mb-3">
                                         <span class="timeline-step">
-                                            <i class="material-icons text-success text-gradient">check_circle</i>
+                                            <i class="material-symbols-rounded text-success text-gradient">check_circle</i>
                                         </span>
                                         <div class="timeline-content">
                                             <h6 class="text-dark text-sm font-weight-bold mb-0">Payment Received</h6>

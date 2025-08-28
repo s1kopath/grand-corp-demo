@@ -39,6 +39,7 @@
 </head>
 
 <body class="g-sidenav-show bg-gray-100">
+
     @include('layouts.partials.sidebar')
 
     <main class="main-content position-relative max-height-vh-100 h-100 border-radius-lg">
@@ -88,6 +89,9 @@
 
     <!-- sweet alert -->
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
     <!-- Hidden form for deleting -->
     <form id="delete-form" method="POST" style="display: none;">

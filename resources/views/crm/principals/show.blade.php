@@ -14,7 +14,7 @@
                             </div>
                             <div class="col-6 text-end">
                                 <a href="{{ route('crm.principals.index') }}" class="btn btn-sm btn-outline-light me-3">
-                                    <i class="material-icons text-sm me-1">arrow_back</i>Back to List
+                                    <i class="material-symbols-rounded text-sm me-1">arrow_back</i>Back to List
                                 </a>
                             </div>
                         </div>
@@ -49,7 +49,7 @@
                                 <div class="col-6">
                                     <p class="text-sm mb-1"><strong>Status:</strong></p>
                                     <p class="text-sm mb-3">
-                                        @if($principal->status === 'active')
+                                        @if ($principal->status === 'active')
                                             <span class="badge badge-sm bg-gradient-success">Active</span>
                                         @elseif($principal->status === 'inactive')
                                             <span class="badge badge-sm bg-gradient-secondary">Inactive</span>
@@ -103,7 +103,8 @@
                                     <div class="card bg-gradient-primary">
                                         <div class="card-body p-3">
                                             <div class="text-center">
-                                                <h4 class="text-white mb-0">{{ $principal->created_at->format('M Y') }}</h4>
+                                                <h4 class="text-white mb-0">{{ $principal->created_at->format('M Y') }}
+                                                </h4>
                                                 <p class="text-white text-sm mb-0">Since</p>
                                             </div>
                                         </div>
@@ -121,11 +122,20 @@
                                 <table class="table align-items-center mb-0">
                                     <thead>
                                         <tr>
-                                            <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Product</th>
-                                            <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Category</th>
-                                            <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">UOM</th>
-                                            <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Status</th>
-                                            <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Action</th>
+                                            <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
+                                                Product</th>
+                                            <th
+                                                class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">
+                                                Category</th>
+                                            <th
+                                                class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
+                                                UOM</th>
+                                            <th
+                                                class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
+                                                Status</th>
+                                            <th
+                                                class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
+                                                Action</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -135,7 +145,8 @@
                                                     <div class="d-flex px-2 py-1">
                                                         <div class="d-flex flex-column justify-content-center">
                                                             <h6 class="mb-0 text-sm">{{ $product->name }}</h6>
-                                                            <p class="text-xs text-secondary mb-0">{{ $product->description }}</p>
+                                                            <p class="text-xs text-secondary mb-0">
+                                                                {{ $product->description }}</p>
                                                         </div>
                                                     </div>
                                                 </td>
@@ -143,19 +154,20 @@
                                                     <p class="text-xs font-weight-bold mb-0">{{ $product->category }}</p>
                                                 </td>
                                                 <td class="align-middle text-center">
-                                                    <span class="text-secondary text-xs font-weight-bold">{{ $product->uom }}</span>
+                                                    <span
+                                                        class="text-secondary text-xs font-weight-bold">{{ $product->uom }}</span>
                                                 </td>
                                                 <td class="align-middle text-center text-sm">
-                                                    @if($product->pivot->active)
+                                                    @if ($product->pivot->active)
                                                         <span class="badge badge-sm bg-gradient-success">Active</span>
                                                     @else
                                                         <span class="badge badge-sm bg-gradient-secondary">Inactive</span>
                                                     @endif
                                                 </td>
                                                 <td class="align-middle text-center">
-                                                    <a href="{{ route('crm.products.show', $product) }}" 
-                                                       class="btn btn-link text-dark px-3 mb-0" title="View Product">
-                                                        <i class="material-icons text-sm me-2">visibility</i>View
+                                                    <a href="{{ route('crm.products.show', $product) }}"
+                                                        class="btn btn-link text-dark px-3 mb-0" title="View Product">
+                                                        <i class="material-symbols-rounded text-sm me-2">visibility</i>View
                                                     </a>
                                                 </td>
                                             </tr>
@@ -180,12 +192,24 @@
                                 <table class="table align-items-center mb-0">
                                     <thead>
                                         <tr>
-                                            <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Quotation</th>
-                                            <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Customer</th>
-                                            <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Date</th>
-                                            <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Status</th>
-                                            <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Total Amount</th>
-                                            <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Action</th>
+                                            <th
+                                                class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
+                                                Quotation</th>
+                                            <th
+                                                class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">
+                                                Customer</th>
+                                            <th
+                                                class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
+                                                Date</th>
+                                            <th
+                                                class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
+                                                Status</th>
+                                            <th
+                                                class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
+                                                Total Amount</th>
+                                            <th
+                                                class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
+                                                Action</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -194,13 +218,16 @@
                                                 <td>
                                                     <div class="d-flex px-2 py-1">
                                                         <div class="d-flex flex-column justify-content-center">
-                                                            <h6 class="mb-0 text-sm">{{ $quotation->quotation_number }}</h6>
-                                                            <p class="text-xs text-secondary mb-0">{{ $quotation->items->count() }} items</p>
+                                                            <h6 class="mb-0 text-sm">{{ $quotation->quotation_number }}
+                                                            </h6>
+                                                            <p class="text-xs text-secondary mb-0">
+                                                                {{ $quotation->items->count() }} items</p>
                                                         </div>
                                                     </div>
                                                 </td>
                                                 <td>
-                                                    <p class="text-xs font-weight-bold mb-0">{{ $quotation->customer->name ?? 'N/A' }}</p>
+                                                    <p class="text-xs font-weight-bold mb-0">
+                                                        {{ $quotation->customer->name ?? 'N/A' }}</p>
                                                 </td>
                                                 <td class="align-middle text-center">
                                                     <span class="text-secondary text-xs font-weight-bold">
@@ -208,14 +235,15 @@
                                                     </span>
                                                 </td>
                                                 <td class="align-middle text-center text-sm">
-                                                    @if($quotation->status === 'pending')
+                                                    @if ($quotation->status === 'pending')
                                                         <span class="badge badge-sm bg-gradient-warning">Pending</span>
                                                     @elseif($quotation->status === 'approved')
                                                         <span class="badge badge-sm bg-gradient-success">Approved</span>
                                                     @elseif($quotation->status === 'rejected')
                                                         <span class="badge badge-sm bg-gradient-danger">Rejected</span>
                                                     @else
-                                                        <span class="badge badge-sm bg-gradient-secondary">{{ ucfirst($quotation->status) }}</span>
+                                                        <span
+                                                            class="badge badge-sm bg-gradient-secondary">{{ ucfirst($quotation->status) }}</span>
                                                     @endif
                                                 </td>
                                                 <td class="align-middle text-center">
@@ -224,9 +252,9 @@
                                                     </span>
                                                 </td>
                                                 <td class="align-middle text-center">
-                                                    <a href="{{ route('quotations.show', $quotation) }}" 
-                                                       class="btn btn-link text-dark px-3 mb-0" title="View Quotation">
-                                                        <i class="material-icons text-sm me-2">visibility</i>View
+                                                    <a href="{{ route('quotations.show', $quotation) }}"
+                                                        class="btn btn-link text-dark px-3 mb-0" title="View Quotation">
+                                                        <i class="material-symbols-rounded text-sm me-2">visibility</i>View
                                                     </a>
                                                 </td>
                                             </tr>

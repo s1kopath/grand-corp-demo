@@ -14,7 +14,7 @@
                             </div>
                             <div class="col-6 text-end">
                                 <a href="{{ route('shipments.index') }}" class="btn btn-sm btn-outline-light me-3">
-                                    <i class="material-icons text-sm me-1">arrow_back</i>Back to List
+                                    <i class="material-symbols-rounded text-sm me-1">arrow_back</i>Back to List
                                 </a>
                             </div>
                         </div>
@@ -387,7 +387,7 @@
                             <div class="timeline timeline-one-side">
                                 <div class="timeline-block mb-3">
                                     <span class="timeline-step">
-                                        <i class="material-icons text-success text-gradient">check_circle</i>
+                                        <i class="material-symbols-rounded text-success text-gradient">check_circle</i>
                                     </span>
                                     <div class="timeline-content">
                                         <h6 class="text-dark text-sm font-weight-bold mb-0">L/C Issued</h6>
@@ -399,9 +399,9 @@
                                 <div class="timeline-block mb-3">
                                     <span class="timeline-step">
                                         @if ($shipment->status === 'pending')
-                                            <i class="material-icons text-warning text-gradient">pending</i>
+                                            <i class="material-symbols-rounded text-warning text-gradient">pending</i>
                                         @else
-                                            <i class="material-icons text-success text-gradient">check_circle</i>
+                                            <i class="material-symbols-rounded text-success text-gradient">check_circle</i>
                                         @endif
                                     </span>
                                     <div class="timeline-content">
@@ -414,11 +414,11 @@
                                 <div class="timeline-block mb-3">
                                     <span class="timeline-step">
                                         @if ($shipment->status === 'in_transit')
-                                            <i class="material-icons text-info text-gradient">local_shipping</i>
+                                            <i class="material-symbols-rounded text-info text-gradient">local_shipping</i>
                                         @elseif($shipment->status === 'delivered')
-                                            <i class="material-icons text-success text-gradient">check_circle</i>
+                                            <i class="material-symbols-rounded text-success text-gradient">check_circle</i>
                                         @else
-                                            <i class="material-icons text-warning text-gradient">pending</i>
+                                            <i class="material-symbols-rounded text-warning text-gradient">pending</i>
                                         @endif
                                     </span>
                                     <div class="timeline-content">
@@ -431,9 +431,9 @@
                                 <div class="timeline-block mb-3">
                                     <span class="timeline-step">
                                         @if ($shipment->status === 'delivered')
-                                            <i class="material-icons text-success text-gradient">check_circle</i>
+                                            <i class="material-symbols-rounded text-success text-gradient">check_circle</i>
                                         @else
-                                            <i class="material-icons text-warning text-gradient">pending</i>
+                                            <i class="material-symbols-rounded text-warning text-gradient">pending</i>
                                         @endif
                                     </span>
                                     <div class="timeline-content">
@@ -446,7 +446,7 @@
                                 @if ($shipment->status === 'delivered')
                                     <div class="timeline-block mb-3">
                                         <span class="timeline-step">
-                                            <i class="material-icons text-success text-gradient">check_circle</i>
+                                            <i class="material-symbols-rounded text-success text-gradient">check_circle</i>
                                         </span>
                                         <div class="timeline-content">
                                             <h6 class="text-dark text-sm font-weight-bold mb-0">Delivery Completed</h6>

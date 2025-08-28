@@ -5,11 +5,11 @@
 @section('content')
     <div class="row">
         <div class="col-xl-3 col-sm-6 mb-xl-0 mb-4">
-            <div class="card">
+            <div class="card">  
                 <div class="card-header p-3 pt-2">
                     <div
                         class="icon icon-lg icon-shape bg-gradient-dark shadow-dark text-center border-radius-xl mt-n4 position-absolute">
-                        <i class="material-icons opacity-10">shopping_cart</i>
+                        <i class="material-symbols-rounded opacity-10">shopping_cart</i>
                     </div>
                     <div class="text-end pt-1">
                         <p class="text-sm mb-0 text-capitalize">Total Indents</p>
@@ -27,7 +27,7 @@
                 <div class="card-header p-3 pt-2">
                     <div
                         class="icon icon-lg icon-shape bg-gradient-primary shadow-primary text-center border-radius-xl mt-n4 position-absolute">
-                        <i class="material-icons opacity-10">account_balance</i>
+                        <i class="material-symbols-rounded opacity-10">account_balance</i>
                     </div>
                     <div class="text-end pt-1">
                         <p class="text-sm mb-0 text-capitalize">Letters of Credit</p>
@@ -45,7 +45,7 @@
                 <div class="card-header p-3 pt-2">
                     <div
                         class="icon icon-lg icon-shape bg-gradient-success shadow-success text-center border-radius-xl mt-n4 position-absolute">
-                        <i class="material-icons opacity-10">local_shipping</i>
+                        <i class="material-symbols-rounded opacity-10">local_shipping</i>
                     </div>
                     <div class="text-end pt-1">
                         <p class="text-sm mb-0 text-capitalize">Shipments</p>
@@ -63,7 +63,7 @@
                 <div class="card-header p-3 pt-2">
                     <div
                         class="icon icon-lg icon-shape bg-gradient-info shadow-info text-center border-radius-xl mt-n4 position-absolute">
-                        <i class="material-icons opacity-10">people</i>
+                        <i class="material-symbols-rounded opacity-10">people</i>
                     </div>
                     <div class="text-end pt-1">
                         <p class="text-sm mb-0 text-capitalize">Customers</p>
@@ -93,7 +93,7 @@
                     <p class="text-sm ">Monthly indent volume trend</p>
                     <hr class="dark horizontal">
                     <div class="d-flex ">
-                        <i class="material-icons text-sm my-auto me-1">schedule</i>
+                        <i class="material-symbols-rounded text-sm my-auto me-1">schedule</i>
                         <p class="mb-0 text-sm">updated 4 min ago</p>
                     </div>
                 </div>
@@ -113,7 +113,7 @@
                     <p class="text-sm ">Monthly shipment performance</p>
                     <hr class="dark horizontal">
                     <div class="d-flex ">
-                        <i class="material-icons text-sm my-auto me-1">schedule</i>
+                        <i class="material-symbols-rounded text-sm my-auto me-1">schedule</i>
                         <p class="mb-0 text-sm">updated 4 min ago</p>
                     </div>
                 </div>
@@ -133,7 +133,7 @@
                     <p class="text-sm ">Top 5 customers by volume</p>
                     <hr class="dark horizontal">
                     <div class="d-flex ">
-                        <i class="material-icons text-sm my-auto me-1">schedule</i>
+                        <i class="material-symbols-rounded text-sm my-auto me-1">schedule</i>
                         <p class="mb-0 text-sm">updated 4 min ago</p>
                     </div>
                 </div>
@@ -259,40 +259,40 @@
                     <div class="timeline timeline-one-side">
                         <div class="timeline-block mb-3">
                             <span class="timeline-step">
-                                <i class="material-icons text-success text-gradient">database</i>
+                                <i class="material-symbols-rounded text-success text-gradient">database</i>
                             </span>
                             <div class="timeline-content">
                                 <h6 class="text-dark text-sm font-weight-bold mb-0">Data Bank & Sourcing</h6>
                                 <p class="text-secondary font-weight-bold text-xs mt-1 mb-0">Search products and prepare
                                     offers</p>
                                 <a href="{{ route('dataBank.index') }}" class="btn btn-link text-dark px-3 mb-0">
-                                    <i class="material-icons text-sm me-2">launch</i>Go to Data Bank
+                                    <i class="material-symbols-rounded text-sm me-2">launch</i>Go to Data Bank
                                 </a>
                             </div>
                         </div>
                         <div class="timeline-block mb-3">
                             <span class="timeline-step">
-                                <i class="material-icons text-info text-gradient">shopping_cart</i>
+                                <i class="material-symbols-rounded text-info text-gradient">add_shopping_cart</i>
                             </span>
                             <div class="timeline-content">
                                 <h6 class="text-dark text-sm font-weight-bold mb-0">Sales Operations</h6>
                                 <p class="text-secondary font-weight-bold text-xs mt-1 mb-0">Manage quotations and indents
                                 </p>
                                 <a href="{{ route('quotations.index') }}" class="btn btn-link text-dark px-3 mb-0">
-                                    <i class="material-icons text-sm me-2">launch</i>View Quotations
+                                    <i class="material-symbols-rounded text-sm me-2">launch</i>View Quotations
                                 </a>
                             </div>
                         </div>
                         <div class="timeline-block mb-3">
                             <span class="timeline-step">
-                                <i class="material-icons text-warning text-gradient">local_shipping</i>
+                                <i class="material-symbols-rounded text-warning text-gradient">local_shipping</i>
                             </span>
                             <div class="timeline-content">
                                 <h6 class="text-dark text-sm font-weight-bold mb-0">Logistics</h6>
                                 <p class="text-secondary font-weight-bold text-xs mt-1 mb-0">Track shipments and documents
                                 </p>
                                 <a href="{{ route('shipments.index') }}" class="btn btn-link text-dark px-3 mb-0">
-                                    <i class="material-icons text-sm me-2">launch</i>View Shipments
+                                    <i class="material-symbols-rounded text-sm me-2">launch</i>View Shipments
                                 </a>
                             </div>
                         </div>

@@ -144,7 +144,8 @@
                                         <td class="align-middle text-center">
                                             <a href="{{ route('quotations.show', 1) }}"
                                                 class="btn btn-link text-dark px-3 mb-0" title="Prepare Offer (Demo)">
-                                                <i class="material-icons text-sm me-2">shopping_cart</i>Prepare Offer
+                                                <i class="material-symbols-rounded text-sm me-2">shopping_cart</i>Prepare
+                                                Offer
                                             </a>
                                         </td>
                                     </tr>

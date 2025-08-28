@@ -40,14 +40,12 @@
                             </div>
                             <div class="col-md-2">
                                 <div class="input-group input-group-outline">
-                                    <label class="form-label">From Date</label>
                                     <input type="date" class="form-control" name="date_from"
                                         value="{{ request('date_from') }}">
                                 </div>
                             </div>
                             <div class="col-md-2">
                                 <div class="input-group input-group-outline">
-                                    <label class="form-label">To Date</label>
                                     <input type="date" class="form-control" name="date_to"
                                         value="{{ request('date_to') }}">
                                 </div>
@@ -106,12 +104,12 @@
                                         </td>
                                         <td class="align-middle text-center">
                                             <span class="text-secondary text-xs font-weight-bold">
-                                                {{ $debitNote->issue_date->format('M d, Y') }}
+                                                {{ $debitNote->created_at->format('M d, Y') }}
                                             </span>
                                         </td>
                                         <td class="align-middle text-center">
                                             <span class="text-secondary text-xs font-weight-bold">
-                                                {{ $debitNote->due_date->format('M d, Y') }}
+                                                {{ $debitNote->updated_at->format('M d, Y') }}
                                             </span>
                                         </td>
                                         <td class="align-middle text-center">
@@ -137,7 +135,7 @@
                                             <div class="d-flex justify-content-center">
                                                 <a href="{{ route('debit-notes.show', $debitNote) }}"
                                                     class="btn btn-link text-dark px-2 mb-0" title="View Details">
-                                                    <i class="material-icons text-sm">visibility</i>
+                                                    <i class="material-symbols-rounded text-sm">visibility</i>
                                                 </a>
                                             </div>
                                         </td>

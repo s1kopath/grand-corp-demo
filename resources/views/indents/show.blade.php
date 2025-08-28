@@ -14,11 +14,11 @@
                             </div>
                             <div class="col-6 text-end">
                                 <a href="{{ route('indents.index') }}" class="btn btn-sm btn-outline-light me-3">
-                                    <i class="material-icons text-sm me-1">arrow_back</i>Back to List
+                                    <i class="material-symbols-rounded text-sm me-1">arrow_back</i>Back to List
                                 </a>
                                 @if ($indent->status === 'approved')
                                     <a href="{{ route('indents.goToLc', $indent) }}" class="btn btn-sm btn-info me-3">
-                                        <i class="material-icons text-sm me-1">account_balance</i>Issue L/C
+                                        <i class="material-symbols-rounded text-sm me-1">account_balance</i>Issue L/C
                                     </a>
                                 @endif
                             </div>
@@ -287,7 +287,8 @@
                                                     <td class="align-middle text-center">
                                                         <a href="{{ route('lcs.show', $lc) }}"
                                                             class="btn btn-link text-dark px-3 mb-0" title="View L/C">
-                                                            <i class="material-icons text-sm me-2">visibility</i>View
+                                                            <i
+                                                                class="material-symbols-rounded text-sm me-2">visibility</i>View
                                                         </a>
                                                     </td>
                                                 </tr>
@@ -320,7 +321,7 @@
                             <div class="timeline timeline-one-side">
                                 <div class="timeline-block mb-3">
                                     <span class="timeline-step">
-                                        <i class="material-icons text-success text-gradient">check_circle</i>
+                                        <i class="material-symbols-rounded text-success text-gradient">check_circle</i>
                                     </span>
                                     <div class="timeline-content">
                                         <h6 class="text-dark text-sm font-weight-bold mb-0">Quotation Approved</h6>
@@ -331,7 +332,7 @@
                                 </div>
                                 <div class="timeline-block mb-3">
                                     <span class="timeline-step">
-                                        <i class="material-icons text-success text-gradient">check_circle</i>
+                                        <i class="material-symbols-rounded text-success text-gradient">check_circle</i>
                                     </span>
                                     <div class="timeline-content">
                                         <h6 class="text-dark text-sm font-weight-bold mb-0">Indent Created</h6>
@@ -343,11 +344,11 @@
                                 <div class="timeline-block mb-3">
                                     <span class="timeline-step">
                                         @if ($indent->status === 'approved')
-                                            <i class="material-icons text-success text-gradient">check_circle</i>
+                                            <i class="material-symbols-rounded text-success text-gradient">check_circle</i>
                                         @elseif($indent->status === 'cancelled')
-                                            <i class="material-icons text-danger text-gradient">cancel</i>
+                                            <i class="material-symbols-rounded text-danger text-gradient">cancel</i>
                                         @else
-                                            <i class="material-icons text-warning text-gradient">pending</i>
+                                            <i class="material-symbols-rounded text-warning text-gradient">pending</i>
                                         @endif
                                     </span>
                                     <div class="timeline-content">
@@ -366,7 +367,7 @@
                                 @if ($indent->status === 'approved')
                                     <div class="timeline-block mb-3">
                                         <span class="timeline-step">
-                                            <i class="material-icons text-info text-gradient">account_balance</i>
+                                            <i class="material-symbols-rounded text-info text-gradient">account_balance</i>
                                         </span>
                                         <div class="timeline-content">
                                             <h6 class="text-dark text-sm font-weight-bold mb-0">Issue L/C</h6>

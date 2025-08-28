@@ -14,7 +14,7 @@
                             </div>
                             <div class="col-6 text-end">
                                 <a href="{{ route('debit-notes.index') }}" class="btn btn-sm btn-outline-light me-3">
-                                    <i class="material-icons text-sm me-1">receipt</i>View Debit Notes
+                                    <i class="material-symbols-rounded text-sm me-1">receipt</i>View Debit Notes
                                 </a>
                             </div>
                         </div>
@@ -23,7 +23,7 @@
                 <div class="card-body">
                     <!-- Demo Info Card -->
                     <div class="alert alert-info text-white font-weight-bold" role="alert">
-                        <i class="material-icons text-sm me-2">info</i>
+                        <i class="material-symbols-rounded text-sm me-2">info</i>
                         <strong>Demo Data:</strong> This page displays financial summary with demo data. All amounts and
                         metrics are simulated for demonstration purposes.
                     </div>
@@ -46,7 +46,7 @@
                                         <div class="col-4 text-end">
                                             <div
                                                 class="icon icon-shape bg-gradient-primary shadow-primary text-center rounded-circle">
-                                                <i class="material-icons opacity-10">account_balance_wallet</i>
+                                                <i class="material-symbols-rounded opacity-10">account_balance_wallet</i>
                                             </div>
                                         </div>
                                     </div>
@@ -69,7 +69,7 @@
                                         <div class="col-4 text-end">
                                             <div
                                                 class="icon icon-shape bg-gradient-warning shadow-warning text-center rounded-circle">
-                                                <i class="material-icons opacity-10">pending</i>
+                                                <i class="material-symbols-rounded opacity-10">pending</i>
                                             </div>
                                         </div>
                                     </div>
@@ -92,7 +92,7 @@
                                         <div class="col-4 text-end">
                                             <div
                                                 class="icon icon-shape bg-gradient-success shadow-success text-center rounded-circle">
-                                                <i class="material-icons opacity-10">check_circle</i>
+                                                <i class="material-symbols-rounded opacity-10">check_circle</i>
                                             </div>
                                         </div>
                                     </div>
@@ -114,7 +114,7 @@
                                         <div class="col-4 text-end">
                                             <div
                                                 class="icon icon-shape bg-gradient-danger shadow-danger text-center rounded-circle">
-                                                <i class="material-icons opacity-10">warning</i>
+                                                <i class="material-symbols-rounded opacity-10">warning</i>
                                             </div>
                                         </div>
                                     </div>
@@ -141,7 +141,7 @@
                                         <div class="col-4 text-end">
                                             <div
                                                 class="icon icon-shape bg-gradient-info shadow-info text-center rounded-circle">
-                                                <i class="material-icons opacity-10">trending_up</i>
+                                                <i class="material-symbols-rounded opacity-10">trending_up</i>
                                             </div>
                                         </div>
                                     </div>
@@ -163,7 +163,7 @@
                                         <div class="col-4 text-end">
                                             <div
                                                 class="icon icon-shape bg-gradient-primary shadow-primary text-center rounded-circle">
-                                                <i class="material-icons opacity-10">pie_chart</i>
+                                                <i class="material-symbols-rounded opacity-10">pie_chart</i>
                                             </div>
                                         </div>
                                     </div>
@@ -186,7 +186,7 @@
                                         <div class="col-4 text-end">
                                             <div
                                                 class="icon icon-shape bg-gradient-warning shadow-warning text-center rounded-circle">
-                                                <i class="material-icons opacity-10">schedule</i>
+                                                <i class="material-symbols-rounded opacity-10">schedule</i>
                                             </div>
                                         </div>
                                     </div>
@@ -209,7 +209,7 @@
                                         <div class="col-4 text-end">
                                             <div
                                                 class="icon icon-shape bg-gradient-success shadow-success text-center rounded-circle">
-                                                <i class="material-icons opacity-10">local_shipping</i>
+                                                <i class="material-symbols-rounded opacity-10">local_shipping</i>
                                             </div>
                                         </div>
                                     </div>
@@ -295,7 +295,7 @@
                                                             <p class="text-xs font-weight-bold mb-0">
                                                                 {{ $transaction->account_name }}</p>
                                                             <p class="text-xs text-secondary mb-0">
-                                                                {{ $transaction->debitNote->debit_note_number ?? 'N/A' }}
+                                                                {{ $transaction->debitNote->number ?? 'N/A' }}
                                                             </p>
                                                         </td>
                                                         <td class="align-middle text-center">
@@ -344,7 +344,8 @@
                                         <div class="timeline timeline-one-side">
                                             <div class="timeline-block mb-3">
                                                 <span class="timeline-step">
-                                                    <i class="material-icons text-warning text-gradient">schedule</i>
+                                                    <i
+                                                        class="material-symbols-rounded text-warning text-gradient">schedule</i>
                                                 </span>
                                                 <div class="timeline-content">
                                                     <h6 class="text-dark text-sm font-weight-bold mb-0">

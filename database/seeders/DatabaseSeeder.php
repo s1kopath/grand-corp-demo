@@ -20,6 +20,7 @@ class DatabaseSeeder extends Seeder
             ProductPrincipalSeeder::class,
             QuotationSeeder::class,
             IndentSeeder::class,
+            IndentItemSeeder::class,
             LetterOfCreditSeeder::class,
             ShipmentSeeder::class,
             ShipmentDocumentSeeder::class,
@@ -27,7 +28,6 @@ class DatabaseSeeder extends Seeder
             DebitNoteSeeder::class,
             AccountEntrySeeder::class,
             ParameterSeeder::class,
-            BrandingSeeder::class,
             DataBankRecordSeeder::class,
             PriceHistorySeeder::class,
         ]);

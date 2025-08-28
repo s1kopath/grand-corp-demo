@@ -1,11 +1,11 @@
-<aside class="sidenav bg-white navbar navbar-vertical navbar-expand-xs border-0 border-radius-xl my-3 fixed-start ms-4"
+<aside class="sidenav navbar navbar-vertical navbar-expand-xs border-radius-lg fixed-start ms-2 bg-white my-2"
     id="sidenav-main">
     <div class="sidenav-header">
-        <i class="fas fa-times p-3 cursor-pointer text-secondary opacity-5 position-absolute end-0 top-0 d-none d-xl-none"
-            aria-hidden="true" id="iconSidenav"></i>
+        <i class="material-symbols-rounded p-2 cursor-pointer text-dark opacity-5 position-absolute end-0 top-2 d-none d-xl-none"
+            aria-hidden="true" id="iconSidenav">close</i>
         <a class="navbar-brand m-0" href="{{ route('dashboard') }}">
-            <img src="{{ asset('assets/img/logo-ct-dark.png') }}" class="navbar-brand-img h-100" alt="main_logo">
-            <span class="ms-1 font-weight-bold">Grand Corp IMS</span>
+            <img src="{{ asset('assets/img/1656314585924.jpeg') }}" class="navbar-brand-img h-100 ms-4" alt="main_logo">
+            <span class="ms-1 font-weight-bold">PharmaCorp IMS</span>
         </a>
     </div>
     <hr class="horizontal dark mt-0">
@@ -155,13 +155,67 @@
 
             @can('viewReports')
                 <li class="nav-item">
-                    <a class="nav-link text-dark {{ request()->routeIs('reports.*') ? 'active bg-gradient-primary' : '' }}"
-                        href="{{ route('reports.index') }}">
+                    <a data-bs-toggle="collapse" href="#reportsCollapse"
+                        class="nav-link text-dark {{ request()->routeIs('reports.*') ? 'active bg-gradient-primary' : '' }}"
+                        aria-controls="reportsCollapse" role="button"
+                        aria-expanded="{{ request()->routeIs('reports.*') ? 'true' : 'false' }}">
                         <div class="text-dark text-center me-2 d-flex align-items-center justify-content-center">
                             <i class="material-symbols-rounded opacity-5">assessment</i>
                         </div>
                         <span class="nav-link-text ms-1">Reports</span>
                     </a>
+                    <div class="collapse {{ request()->routeIs('reports.*') ? 'show' : '' }}" id="reportsCollapse">
+                        <ul class="nav ms-4">
+                            <li class="nav-item">
+                                <a class="nav-link text-dark {{ request()->routeIs('reports.index') ? 'active' : '' }}"
+                                    href="{{ route('reports.index') }}">
+                                    <span class="nav-link-text ms-1">Reports Overview</span>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-dark {{ request()->routeIs('reports.pareto-analysis') ? 'active' : '' }}"
+                                    href="{{ route('reports.pareto-analysis') }}">
+                                    <span class="nav-link-text ms-1">80/20 Analysis</span>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-dark {{ request()->routeIs('reports.principal-product-volume') ? 'active' : '' }}"
+                                    href="{{ route('reports.principal-product-volume') }}">
+                                    <span class="nav-link-text ms-1">Principal-wise Volume</span>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-dark {{ request()->routeIs('reports.product-principal-engagement') ? 'active' : '' }}"
+                                    href="{{ route('reports.product-principal-engagement') }}">
+                                    <span class="nav-link-text ms-1">Product-Principal <br>Engagement</span>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-dark {{ request()->routeIs('reports.indents-vs-shipments') ? 'active' : '' }}"
+                                    href="{{ route('reports.indents-vs-shipments') }}">
+                                    <span class="nav-link-text ms-1">Indents vs Shipments</span>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-dark {{ request()->routeIs('reports.customer-business-volume') ? 'active' : '' }}"
+                                    href="{{ route('reports.customer-business-volume') }}">
+                                    <span class="nav-link-text ms-1">Customer Business <br>Volume</span>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-dark {{ request()->routeIs('reports.outstanding-payments') ? 'active' : '' }}"
+                                    href="{{ route('reports.outstanding-payments') }}">
+                                    <span class="nav-link-text ms-1">Outstanding Payments</span>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-dark {{ request()->routeIs('reports.lc-expiry-analysis') ? 'active' : '' }}"
+                                    href="{{ route('reports.lc-expiry-analysis') }}">
+                                    <span class="nav-link-text ms-1">L/C Expiry Analysis</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
                 </li>
             @endcan
 
@@ -196,14 +250,6 @@
                                     <span class="nav-link-text ms-1">Master Setup</span>
                                 </a>
                             </li>
-                            @can('manageBranding')
-                                <li class="nav-item">
-                                    <a class="nav-link text-dark {{ request()->routeIs('admin.branding') ? 'active' : '' }}"
-                                        href="{{ route('admin.branding') }}">
-                                        <span class="nav-link-text ms-1">Branding</span>
-                                    </a>
-                                </li>
-                            @endcan
                         </ul>
                     </div>
                 </li>

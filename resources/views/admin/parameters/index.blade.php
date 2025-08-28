@@ -14,7 +14,7 @@
                             </div>
                             <div class="col-6 text-end">
                                 <span class="btn btn-sm btn-outline-light me-3">
-                                    <i class="material-icons text-sm me-1">settings</i>Add Parameter
+                                    <i class="material-symbols-rounded text-sm me-1">settings</i>Add Parameter
                                 </span>
                             </div>
                         </div>
@@ -23,7 +23,7 @@
                 <div class="card-body">
                     <!-- Demo Info Card -->
                     <div class="alert alert-info text-white font-weight-bold" role="alert">
-                        <i class="material-icons text-sm me-2">info</i>
+                        <i class="material-symbols-rounded text-sm me-2">info</i>
                         <strong>Demo Parameters:</strong> This page displays system configuration parameters. All parameters
                         are pre-seeded for demonstration purposes.
                     </div>
@@ -45,7 +45,7 @@
                                         <div class="col-4 text-end">
                                             <div
                                                 class="icon icon-shape bg-gradient-primary shadow-primary text-center rounded-circle">
-                                                <i class="material-icons opacity-10">settings</i>
+                                                <i class="material-symbols-rounded opacity-10">settings</i>
                                             </div>
                                         </div>
                                     </div>
@@ -65,7 +65,7 @@
                                         <div class="col-4 text-end">
                                             <div
                                                 class="icon icon-shape bg-gradient-success shadow-success text-center rounded-circle">
-                                                <i class="material-icons opacity-10">category</i>
+                                                <i class="material-symbols-rounded opacity-10">category</i>
                                             </div>
                                         </div>
                                     </div>
@@ -86,7 +86,7 @@
                                         <div class="col-4 text-end">
                                             <div
                                                 class="icon icon-shape bg-gradient-info shadow-info text-center rounded-circle">
-                                                <i class="material-icons opacity-10">computer</i>
+                                                <i class="material-symbols-rounded opacity-10">computer</i>
                                             </div>
                                         </div>
                                     </div>
@@ -107,7 +107,7 @@
                                         <div class="col-4 text-end">
                                             <div
                                                 class="icon icon-shape bg-gradient-warning shadow-warning text-center rounded-circle">
-                                                <i class="material-icons opacity-10">business</i>
+                                                <i class="material-symbols-rounded opacity-10">business</i>
                                             </div>
                                         </div>
                                     </div>
@@ -132,7 +132,7 @@
                                                 <div
                                                     class="icon icon-shape bg-gradient-{{ $category === 'system' ? 'info' : 'warning' }} shadow-{{ $category === 'system' ? 'info' : 'warning' }} text-center rounded-circle">
                                                     <i
-                                                        class="material-icons opacity-10">{{ $category === 'system' ? 'computer' : 'business' }}</i>
+                                                        class="material-symbols-rounded opacity-10">{{ $category === 'system' ? 'computer' : 'business' }}</i>
                                                 </div>
                                             </div>
                                         </div>
@@ -192,12 +192,13 @@
                                                                     <a href="#"
                                                                         class="btn btn-link text-dark px-2 mb-0"
                                                                         title="Edit Parameter">
-                                                                        <i class="material-icons text-sm">edit</i>
+                                                                        <i class="material-symbols-rounded text-sm">edit</i>
                                                                     </a>
                                                                     <a href="#"
                                                                         class="btn btn-link text-dark px-2 mb-0"
                                                                         title="View History">
-                                                                        <i class="material-icons text-sm">history</i>
+                                                                        <i
+                                                                            class="material-symbols-rounded text-sm">history</i>
                                                                     </a>
                                                                 </div>
                                                             </td>
@@ -223,7 +224,7 @@
                                             <div class="d-flex align-items-center">
                                                 <div
                                                     class="icon icon-shape bg-white shadow text-center rounded-circle me-3">
-                                                    <i class="material-icons opacity-10 text-info">computer</i>
+                                                    <i class="material-symbols-rounded opacity-10 text-info">computer</i>
                                                 </div>
                                                 <div>
                                                     <h6 class="mb-0">System Parameters</h6>
@@ -242,7 +243,8 @@
                                             <div class="d-flex align-items-center">
                                                 <div
                                                     class="icon icon-shape bg-white shadow text-center rounded-circle me-3">
-                                                    <i class="material-icons opacity-10 text-warning">business</i>
+                                                    <i
+                                                        class="material-symbols-rounded opacity-10 text-warning">business</i>
                                                 </div>
                                                 <div>
                                                     <h6 class="mb-0">Business Parameters</h6>
@@ -274,7 +276,7 @@
                                                 <div class="timeline-block mb-3">
                                                     <span class="timeline-step">
                                                         <i
-                                                            class="material-icons text-success text-gradient">check_circle</i>
+                                                            class="material-symbols-rounded text-success text-gradient">check_circle</i>
                                                     </span>
                                                     <div class="timeline-content">
                                                         <h6 class="text-dark text-sm font-weight-bold mb-0">Session Timeout
@@ -286,7 +288,8 @@
                                                 </div>
                                                 <div class="timeline-block mb-3">
                                                     <span class="timeline-step">
-                                                        <i class="material-icons text-info text-gradient">info</i>
+                                                        <i
+                                                            class="material-symbols-rounded text-info text-gradient">info</i>
                                                     </span>
                                                     <div class="timeline-content">
                                                         <h6 class="text-dark text-sm font-weight-bold mb-0">Email
@@ -298,7 +301,8 @@
                                                 </div>
                                                 <div class="timeline-block mb-3">
                                                     <span class="timeline-step">
-                                                        <i class="material-icons text-warning text-gradient">warning</i>
+                                                        <i
+                                                            class="material-symbols-rounded text-warning text-gradient">warning</i>
                                                     </span>
                                                     <div class="timeline-content">
                                                         <h6 class="text-dark text-sm font-weight-bold mb-0">Backup
@@ -320,17 +324,21 @@
                                         <div class="card-body p-3">
                                             <div class="d-grid gap-2">
                                                 <button class="btn btn-sm bg-gradient-primary text-white" type="button">
-                                                    <i class="material-icons text-sm me-2">settings</i>Add New Parameter
+                                                    <i class="material-symbols-rounded text-sm me-2">settings</i>Add New
+                                                    Parameter
                                                 </button>
                                                 <button class="btn btn-sm bg-gradient-success text-white" type="button">
-                                                    <i class="material-icons text-sm me-2">file_download</i>Export
+                                                    <i
+                                                        class="material-symbols-rounded text-sm me-2">file_download</i>Export
                                                     Parameters
                                                 </button>
                                                 <button class="btn btn-sm bg-gradient-info text-white" type="button">
-                                                    <i class="material-icons text-sm me-2">file_upload</i>Import Parameters
+                                                    <i class="material-symbols-rounded text-sm me-2">file_upload</i>Import
+                                                    Parameters
                                                 </button>
                                                 <button class="btn btn-sm bg-gradient-warning text-white" type="button">
-                                                    <i class="material-icons text-sm me-2">restore</i>Reset to Defaults
+                                                    <i class="material-symbols-rounded text-sm me-2">restore</i>Reset to
+                                                    Defaults
                                                 </button>
                                             </div>
                                         </div>

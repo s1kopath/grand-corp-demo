@@ -34,4 +34,9 @@ class Product extends Model
     {
         return $this->hasMany(QuotationItem::class);
     }
+
+    public function indentItems(): HasMany
+    {
+        return $this->hasMany(IndentItem::class);
+    }
 }

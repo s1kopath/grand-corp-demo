@@ -40,14 +40,12 @@
                             </div>
                             <div class="col-md-2">
                                 <div class="input-group input-group-outline">
-                                    <label class="form-label">From Date</label>
                                     <input type="date" class="form-control" name="date_from"
                                         value="{{ request('date_from') }}">
                                 </div>
                             </div>
                             <div class="col-md-2">
                                 <div class="input-group input-group-outline">
-                                    <label class="form-label">To Date</label>
                                     <input type="date" class="form-control" name="date_to"
                                         value="{{ request('date_to') }}">
                                 </div>
@@ -146,7 +144,7 @@
                                             <div class="d-flex justify-content-center">
                                                 <a href="{{ route('shipments.show', $shipment) }}"
                                                     class="btn btn-link text-dark px-2 mb-0" title="View Details">
-                                                    <i class="material-icons text-sm">visibility</i>
+                                                    <i class="material-symbols-rounded text-sm">visibility</i>
                                                 </a>
                                             </div>
                                         </td>

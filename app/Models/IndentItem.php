@@ -6,22 +6,20 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
-class AccountEntry extends Model
+class IndentItem extends Model
 {
     use HasFactory;
 
     protected $fillable = [
         'indent_id',
-        'debit_note_id',
-        'type',
-        'amount',
-        'entry_date',
-        'notes',
+        'product_id',
+        'qty',
+        'price',
     ];
 
     protected $casts = [
-        'amount' => 'decimal:2',
-        'entry_date' => 'date',
+        'qty' => 'decimal:2',
+        'price' => 'decimal:2',
     ];
 
     public function indent(): BelongsTo
@@ -29,8 +27,8 @@ class AccountEntry extends Model
         return $this->belongsTo(Indent::class);
     }
 
-    public function debitNote(): BelongsTo
+    public function product(): BelongsTo
     {
-        return $this->belongsTo(DebitNote::class);
+        return $this->belongsTo(Product::class);
     }
 }

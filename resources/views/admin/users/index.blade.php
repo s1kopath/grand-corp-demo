@@ -14,7 +14,7 @@
                             </div>
                             <div class="col-6 text-end">
                                 <span class="btn btn-sm btn-outline-light me-3">
-                                    <i class="material-icons text-sm me-1">person_add</i>Create User
+                                    <i class="material-symbols-rounded text-sm me-1">person_add</i>Create User
                                 </span>
                             </div>
                         </div>
@@ -23,7 +23,7 @@
                 <div class="card-body">
                     <!-- Demo Info Card -->
                     <div class="alert alert-info text-white font-weight-bold" role="alert">
-                        <i class="material-icons text-sm me-2">info</i>
+                        <i class="material-symbols-rounded text-sm me-2">info</i>
                         <strong>Demo Users:</strong> This page displays user accounts and role assignments. All user data is
                         pre-seeded for demonstration purposes.
                     </div>
@@ -43,7 +43,7 @@
                                         <div class="col-4 text-end">
                                             <div
                                                 class="icon icon-shape bg-gradient-primary shadow-primary text-center rounded-circle">
-                                                <i class="material-icons opacity-10">people</i>
+                                                <i class="material-symbols-rounded opacity-10">people</i>
                                             </div>
                                         </div>
                                     </div>
@@ -63,7 +63,7 @@
                                         <div class="col-4 text-end">
                                             <div
                                                 class="icon icon-shape bg-gradient-danger shadow-danger text-center rounded-circle">
-                                                <i class="material-icons opacity-10">admin_panel_settings</i>
+                                                <i class="material-symbols-rounded opacity-10">admin_panel_settings</i>
                                             </div>
                                         </div>
                                     </div>
@@ -83,7 +83,7 @@
                                         <div class="col-4 text-end">
                                             <div
                                                 class="icon icon-shape bg-gradient-warning shadow-warning text-center rounded-circle">
-                                                <i class="material-icons opacity-10">security</i>
+                                                <i class="material-symbols-rounded opacity-10">security</i>
                                             </div>
                                         </div>
                                     </div>
@@ -103,7 +103,7 @@
                                         <div class="col-4 text-end">
                                             <div
                                                 class="icon icon-shape bg-gradient-info shadow-info text-center rounded-circle">
-                                                <i class="material-icons opacity-10">person</i>
+                                                <i class="material-symbols-rounded opacity-10">person</i>
                                             </div>
                                         </div>
                                     </div>
@@ -123,7 +123,7 @@
                                         <div class="col-4 text-end">
                                             <div
                                                 class="icon icon-shape bg-gradient-success shadow-success text-center rounded-circle">
-                                                <i class="material-icons opacity-10">check_circle</i>
+                                                <i class="material-symbols-rounded opacity-10">check_circle</i>
                                             </div>
                                         </div>
                                     </div>
@@ -143,7 +143,7 @@
                                         <div class="col-4 text-end">
                                             <div
                                                 class="icon icon-shape bg-gradient-secondary shadow-secondary text-center rounded-circle">
-                                                <i class="material-icons opacity-10">login</i>
+                                                <i class="material-symbols-rounded opacity-10">login</i>
                                             </div>
                                         </div>
                                     </div>
@@ -193,8 +193,8 @@
                                                 <td>
                                                     <div class="d-flex flex-column">
                                                         <span
-                                                            class="badge badge-sm bg-gradient-{{ $user->role === 'super_admin' ? 'danger' : ($user->role === 'admin' ? 'warning' : 'info') }}">
-                                                            {{ ucwords(str_replace('_', ' ', $user->role)) }}
+                                                            class="badge badge-sm bg-gradient-{{ $user->role === \App\Enums\UserRole::SUPER_ADMIN ? 'danger' : ($user->role === \App\Enums\UserRole::ADMIN ? 'warning' : 'info') }}">
+                                                            {{ ucwords(str_replace('_', ' ', $user->role->value)) }}
                                                         </span>
                                                     </div>
                                                 </td>
@@ -221,15 +221,15 @@
                                                     <div class="d-flex justify-content-center">
                                                         <a href="#" class="btn btn-link text-dark px-2 mb-0"
                                                             title="View Profile">
-                                                            <i class="material-icons text-sm">visibility</i>
+                                                            <i class="material-symbols-rounded text-sm">visibility</i>
                                                         </a>
                                                         <a href="#" class="btn btn-link text-dark px-2 mb-0"
                                                             title="Edit User">
-                                                            <i class="material-icons text-sm">edit</i>
+                                                            <i class="material-symbols-rounded text-sm">edit</i>
                                                         </a>
                                                         <a href="#" class="btn btn-link text-dark px-2 mb-0"
                                                             title="Reset Password">
-                                                            <i class="material-icons text-sm">lock_reset</i>
+                                                            <i class="material-symbols-rounded text-sm">lock_reset</i>
                                                         </a>
                                                     </div>
                                                 </td>
@@ -253,7 +253,7 @@
                                         <div class="timeline-block mb-3">
                                             <span class="timeline-step">
                                                 <i
-                                                    class="material-icons text-danger text-gradient">admin_panel_settings</i>
+                                                    class="material-symbols-rounded text-danger text-gradient">admin_panel_settings</i>
                                             </span>
                                             <div class="timeline-content">
                                                 <h6 class="text-dark text-sm font-weight-bold mb-0">Super Admins</h6>
@@ -264,7 +264,7 @@
                                         </div>
                                         <div class="timeline-block mb-3">
                                             <span class="timeline-step">
-                                                <i class="material-icons text-warning text-gradient">security</i>
+                                                <i class="material-symbols-rounded text-warning text-gradient">security</i>
                                             </span>
                                             <div class="timeline-content">
                                                 <h6 class="text-dark text-sm font-weight-bold mb-0">Admins</h6>
@@ -275,7 +275,7 @@
                                         </div>
                                         <div class="timeline-block mb-3">
                                             <span class="timeline-step">
-                                                <i class="material-icons text-info text-gradient">person</i>
+                                                <i class="material-symbols-rounded text-info text-gradient">person</i>
                                             </span>
                                             <div class="timeline-content">
                                                 <h6 class="text-dark text-sm font-weight-bold mb-0">Staff</h6>
@@ -332,22 +332,22 @@
                             <div class="row">
                                 <div class="col-md-3 mb-3">
                                     <button class="btn btn-sm bg-gradient-primary text-white w-100" type="button">
-                                        <i class="material-icons text-sm me-2">person_add</i>Create User
+                                        <i class="material-symbols-rounded text-sm me-2">person_add</i>Create User
                                     </button>
                                 </div>
                                 <div class="col-md-3 mb-3">
                                     <button class="btn btn-sm bg-gradient-success text-white w-100" type="button">
-                                        <i class="material-icons text-sm me-2">group_add</i>Bulk Import
+                                        <i class="material-symbols-rounded text-sm me-2">group_add</i>Bulk Import
                                     </button>
                                 </div>
                                 <div class="col-md-3 mb-3">
                                     <button class="btn btn-sm bg-gradient-warning text-white w-100" type="button">
-                                        <i class="material-icons text-sm me-2">security</i>Role Management
+                                        <i class="material-symbols-rounded text-sm me-2">security</i>Role Management
                                     </button>
                                 </div>
                                 <div class="col-md-3 mb-3">
                                     <button class="btn btn-sm bg-gradient-info text-white w-100" type="button">
-                                        <i class="material-icons text-sm me-2">assessment</i>User Reports
+                                        <i class="material-symbols-rounded text-sm me-2">assessment</i>User Reports
                                     </button>
                                 </div>
                             </div>

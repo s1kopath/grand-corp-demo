@@ -1,32 +1,32 @@
-# Grand Corporation IMS - Demo Application
+# PharmaCorp IMS - Pharmaceutical Inventory Management System
 
-A comprehensive **read-only demo** of an International Management System (IMS) built with Laravel 12 and Blade templates. This demo showcases end-to-end business workflow navigation across all modules with static, pre-seeded data.
+A comprehensive **read-only demo** of a Pharmaceutical Inventory Management System (IMS) built with Laravel 12 and Blade templates. This demo showcases end-to-end pharmaceutical business workflow navigation across all modules with static, pre-seeded data including medicines, medical devices, and healthcare institutions.
 
 ## 🎯 Demo Features
 
-### **Complete Business Workflow**
+### **Complete Pharmaceutical Business Workflow**
 
--   **Data Bank & Sourcing** → Search products and prepare offers
--   **CRM** → Manage customers, principals, and products
+-   **Data Bank & Sourcing** → Search pharmaceutical products and prepare offers
+-   **CRM** → Manage hospitals, clinics, pharmacies, and pharmaceutical manufacturers
 -   **Sales Operations** → Quotations → Indents → Letters of Credit
 -   **Logistics** → Shipments with documents and certificates
 -   **Finance** → Debit Notes and Account Summaries
--   **Reports** → 8 predefined business reports
--   **Admin** → Teams, users, parameters, and branding
+-   **Reports** → 8 predefined pharmaceutical business reports
+-   **Admin** → Teams, users, parameters
 
 ### **Role-Based Access Control**
 
 -   **SuperAdmin**: Full access to all modules
--   **Admin**: All modules except branding management
+-   **Admin**: All modules
 -   **Staff**: Read-only access to CRM, Data Bank, Sales Ops, and Logistics
 
 ### **Interactive Demo Elements**
 
--   ✅ **Fuzzy Search** across product names and aliases
+-   ✅ **Fuzzy Search** across pharmaceutical product names and aliases
 -   ✅ **Working Filters** with pagination
 -   ✅ **Clickable CTAs** that navigate through the workflow
--   ✅ **Static Charts** with realistic data
--   ✅ **Status Tracking** for business processes
+-   ✅ **Static Charts** with realistic pharmaceutical data
+-   ✅ **Status Tracking** for pharmaceutical business processes
 -   ✅ **Demo Banner** clearly indicating read-only mode
 
 ## 🚀 Quick Start
@@ -68,17 +68,47 @@ Staff:      staff@grand.test / password
 
 ## 📊 Demo Data Overview
 
-### **Core Entities**
+### **Core Pharmaceutical Entities**
 
--   **12 Customers** across different regions
--   **10 Principals** from various countries
--   **40 Products** across 6 categories
--   **25 Quotations** with items
+-   **25 Healthcare Institutions** (Hospitals, Clinics, Pharmacies, Diagnostic Centers)
+-   **40 Pharmaceutical Manufacturers** from various countries
+-   **60 Pharmaceutical Products** across 10 categories (Antibiotics, Analgesics, Cardiovascular, Diabetes, Oncology, Vaccines, OTC Medicines, Medical Devices, Surgical Supplies, Diagnostic Kits)
+-   **25 Quotations** with pharmaceutical items
 -   **18 Indents** with status tracking
 -   **14 Letters of Credit** with expiry dates
 -   **20 Shipments** with documents
 -   **12 Debit Notes** for invoicing
--   **200+ Data Bank Records** for sourcing
+-   **200+ Data Bank Records** for pharmaceutical sourcing
+
+### **Pharmaceutical Product Categories**
+
+-   **Antibiotics**: Amoxicillin, Ciprofloxacin, Azithromycin, Ceftriaxone, Doxycycline, Metronidazole
+-   **Analgesics**: Paracetamol, Ibuprofen, Diclofenac, Tramadol, Morphine, Codeine
+-   **Cardiovascular**: Amlodipine, Atenolol, Lisinopril, Simvastatin, Aspirin, Warfarin
+-   **Diabetes**: Metformin, Gliclazide, Insulin Regular, Insulin NPH, Glimepiride, Pioglitazone
+-   **Oncology**: Cisplatin, Paclitaxel, Doxorubicin, Cyclophosphamide, Methotrexate, 5-Fluorouracil
+-   **Vaccines**: COVID-19, Hepatitis B, Influenza, MMR, Tetanus, BCG
+-   **OTC Medicines**: Vitamin C, Calcium, Iron, Zinc, Folic Acid, Multivitamin
+-   **Medical Devices**: Syringes, Needles, IV Cannulas, Catheters, Glucometers, BP Monitors
+-   **Surgical Supplies**: Gloves, Masks, Bandages, Tapes, Sutures, Scalpels
+-   **Diagnostic Kits**: Pregnancy Tests, Malaria Tests, HIV Tests, Glucose Strips, Urine Tests, COVID-19 Tests
+
+### **Healthcare Institution Types**
+
+-   **Major Hospitals**: Dhaka Medical College, BSMMU, CMCH, RMCH, SMCH
+-   **Private Hospitals**: Square Hospital, Apollo Hospitals, United Hospital, Popular Medical Centre, Labaid
+-   **Medical Centers**: Ibn Sina, Central Medical, Green Life, City Heart, National Heart Foundation
+-   **Pharmacies**: Apex Pharmacy, MediCare, HealthCare, LifeCare, Wellness
+-   **Diagnostic Centers**: Popular Diagnostic, Labaid Diagnostic, Square Diagnostic
+-   **Government Centers**: Upazila Health Complex, Community Clinic
+
+### **Pharmaceutical Manufacturers**
+
+-   **Global Pharma**: Pfizer, Novartis, Roche, Johnson & Johnson, Merck, GSK, Sanofi, AstraZeneca, Bayer, Eli Lilly
+-   **Indian Pharma**: Sun Pharmaceutical, Dr. Reddy's, Cipla, Aurobindo, Lupin, Torrent, Cadila, Glenmark
+-   **Chinese Pharma**: Sinopharm, Hengrui, Yangtze River, CSPC, Harbin
+-   **Biotech**: Amgen, Biogen, Gilead, Regeneron, Moderna
+-   **Generic**: Teva, Mylan, Sandoz, Fresenius, Hikma
 
 ### **Sample IDs for Navigation**
 
@@ -124,7 +154,6 @@ Staff:      staff@grand.test / password
 -   **Teams Management**: `/admin/teams` → View team structure and hierarchy
 -   **Users Management**: `/admin/users` → View user accounts and roles
 -   **System Parameters**: `/admin/parameters` → View system configuration
--   **Company Branding**: `/admin/branding` → View company branding (SuperAdmin only)
 
 ## 🎨 UI/UX Features
 
@@ -169,7 +198,7 @@ Shipment, ShipmentDocument, Certificate
 DebitNote, AccountEntry
 
 // Support Models
-Team, User, Parameter, Branding
+Team, User, Parameter
 DataBankRecord, PriceHistory
 ```
 

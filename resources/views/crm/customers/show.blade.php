@@ -14,7 +14,7 @@
                             </div>
                             <div class="col-6 text-end">
                                 <a href="{{ route('crm.customers.index') }}" class="btn btn-sm btn-outline-light me-3">
-                                    <i class="material-icons text-sm me-1">arrow_back</i>Back to List
+                                    <i class="material-symbols-rounded text-sm me-1">arrow_back</i>Back to List
                                 </a>
                             </div>
                         </div>
@@ -49,7 +49,7 @@
                                 <div class="col-6">
                                     <p class="text-sm mb-1"><strong>Status:</strong></p>
                                     <p class="text-sm mb-3">
-                                        @if($customer->status === 'active')
+                                        @if ($customer->status === 'active')
                                             <span class="badge badge-sm bg-gradient-success">Active</span>
                                         @elseif($customer->status === 'inactive')
                                             <span class="badge badge-sm bg-gradient-secondary">Inactive</span>
@@ -121,11 +121,20 @@
                                 <table class="table align-items-center mb-0">
                                     <thead>
                                         <tr>
-                                            <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Quotation</th>
-                                            <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Date</th>
-                                            <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Status</th>
-                                            <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Total Amount</th>
-                                            <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Action</th>
+                                            <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
+                                                Quotation</th>
+                                            <th
+                                                class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">
+                                                Date</th>
+                                            <th
+                                                class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
+                                                Status</th>
+                                            <th
+                                                class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
+                                                Total Amount</th>
+                                            <th
+                                                class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
+                                                Action</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -134,23 +143,27 @@
                                                 <td>
                                                     <div class="d-flex px-2 py-1">
                                                         <div class="d-flex flex-column justify-content-center">
-                                                            <h6 class="mb-0 text-sm">{{ $quotation->quotation_number }}</h6>
-                                                            <p class="text-xs text-secondary mb-0">{{ $quotation->items->count() }} items</p>
+                                                            <h6 class="mb-0 text-sm">{{ $quotation->quotation_number }}
+                                                            </h6>
+                                                            <p class="text-xs text-secondary mb-0">
+                                                                {{ $quotation->items->count() }} items</p>
                                                         </div>
                                                     </div>
                                                 </td>
                                                 <td>
-                                                    <p class="text-xs font-weight-bold mb-0">{{ $quotation->quotation_date->format('M d, Y') }}</p>
+                                                    <p class="text-xs font-weight-bold mb-0">
+                                                        {{ $quotation->quotation_date->format('M d, Y') }}</p>
                                                 </td>
                                                 <td class="align-middle text-center text-sm">
-                                                    @if($quotation->status === 'pending')
+                                                    @if ($quotation->status === 'pending')
                                                         <span class="badge badge-sm bg-gradient-warning">Pending</span>
                                                     @elseif($quotation->status === 'approved')
                                                         <span class="badge badge-sm bg-gradient-success">Approved</span>
                                                     @elseif($quotation->status === 'rejected')
                                                         <span class="badge badge-sm bg-gradient-danger">Rejected</span>
                                                     @else
-                                                        <span class="badge badge-sm bg-gradient-secondary">{{ ucfirst($quotation->status) }}</span>
+                                                        <span
+                                                            class="badge badge-sm bg-gradient-secondary">{{ ucfirst($quotation->status) }}</span>
                                                     @endif
                                                 </td>
                                                 <td class="align-middle text-center">
@@ -159,9 +172,9 @@
                                                     </span>
                                                 </td>
                                                 <td class="align-middle text-center">
-                                                    <a href="{{ route('quotations.show', $quotation) }}" 
-                                                       class="btn btn-link text-dark px-3 mb-0" title="View Quotation">
-                                                        <i class="material-icons text-sm me-2">visibility</i>View
+                                                    <a href="{{ route('quotations.show', $quotation) }}"
+                                                        class="btn btn-link text-dark px-3 mb-0" title="View Quotation">
+                                                        <i class="material-symbols-rounded text-sm me-2">visibility</i>View
                                                     </a>
                                                 </td>
                                             </tr>
@@ -186,11 +199,21 @@
                                 <table class="table align-items-center mb-0">
                                     <thead>
                                         <tr>
-                                            <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Indent</th>
-                                            <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Date</th>
-                                            <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Status</th>
-                                            <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Total Amount</th>
-                                            <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Action</th>
+                                            <th
+                                                class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
+                                                Indent</th>
+                                            <th
+                                                class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">
+                                                Date</th>
+                                            <th
+                                                class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
+                                                Status</th>
+                                            <th
+                                                class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
+                                                Total Amount</th>
+                                            <th
+                                                class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
+                                                Action</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -200,22 +223,25 @@
                                                     <div class="d-flex px-2 py-1">
                                                         <div class="d-flex flex-column justify-content-center">
                                                             <h6 class="mb-0 text-sm">{{ $indent->indent_number }}</h6>
-                                                            <p class="text-xs text-secondary mb-0">{{ $indent->items->count() }} items</p>
+                                                            <p class="text-xs text-secondary mb-0">
+                                                                {{ $indent->items->count() }} items</p>
                                                         </div>
                                                     </div>
                                                 </td>
                                                 <td>
-                                                    <p class="text-xs font-weight-bold mb-0">{{ $indent->indent_date->format('M d, Y') }}</p>
+                                                    <p class="text-xs font-weight-bold mb-0">
+                                                        {{ $indent->indent_date->format('M d, Y') }}</p>
                                                 </td>
                                                 <td class="align-middle text-center text-sm">
-                                                    @if($indent->status === 'pending')
+                                                    @if ($indent->status === 'pending')
                                                         <span class="badge badge-sm bg-gradient-warning">Pending</span>
                                                     @elseif($indent->status === 'approved')
                                                         <span class="badge badge-sm bg-gradient-success">Approved</span>
                                                     @elseif($indent->status === 'lc_issued')
                                                         <span class="badge badge-sm bg-gradient-info">L/C Issued</span>
                                                     @else
-                                                        <span class="badge badge-sm bg-gradient-secondary">{{ ucfirst($indent->status) }}</span>
+                                                        <span
+                                                            class="badge badge-sm bg-gradient-secondary">{{ ucfirst($indent->status) }}</span>
                                                     @endif
                                                 </td>
                                                 <td class="align-middle text-center">
@@ -224,9 +250,9 @@
                                                     </span>
                                                 </td>
                                                 <td class="align-middle text-center">
-                                                    <a href="{{ route('indents.show', $indent) }}" 
-                                                       class="btn btn-link text-dark px-3 mb-0" title="View Indent">
-                                                        <i class="material-icons text-sm me-2">visibility</i>View
+                                                    <a href="{{ route('indents.show', $indent) }}"
+                                                        class="btn btn-link text-dark px-3 mb-0" title="View Indent">
+                                                        <i class="material-symbols-rounded text-sm me-2">visibility</i>View
                                                     </a>
                                                 </td>
                                             </tr>

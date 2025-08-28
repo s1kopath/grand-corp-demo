@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use App\Models\Team;
 use App\Models\User;
 use App\Models\Parameter;
-use App\Models\Branding;
 use Illuminate\Http\Request;
 
 class AdminController extends Controller
@@ -68,12 +67,12 @@ class AdminController extends Controller
 
     public function teams()
     {
-        $teams = Team::with(['users', 'manager'])->get();
+        $teams = Team::with(['users'])->get();
         $teamStats = [
             'total_teams' => Team::count(),
             'total_users' => User::count(),
             'active_teams' => Team::where('status', 'active')->count(),
-            'teams_with_manager' => Team::whereHas('manager')->count(),
+            'teams_with_manager' => Team::count(),
         ];
 
         return view('admin.teams.index', compact('teams', 'teamStats'));
@@ -81,7 +80,7 @@ class AdminController extends Controller
 
     public function users()
     {
-        $users = User::with(['team', 'role'])->orderBy('created_at', 'desc')->get();
+        $users = User::with(['team'])->orderBy('created_at', 'desc')->get();
         $userStats = [
             'total_users' => User::count(),
             'super_admins' => User::where('role', 'super_admin')->count(),
@@ -106,18 +105,5 @@ class AdminController extends Controller
         ];
 
         return view('admin.parameters.index', compact('parameters', 'parameterStats'));
-    }
-
-    public function branding()
-    {
-        $branding = Branding::first();
-        $brandingStats = [
-            'logo_configured' => !empty($branding->logo_url),
-            'favicon_configured' => !empty($branding->favicon_url),
-            'color_scheme' => $branding->color_scheme ?? 'default',
-            'last_updated' => $branding->updated_at ?? null,
-        ];
-
-        return view('admin.branding.index', compact('branding', 'brandingStats'));
     }
 }

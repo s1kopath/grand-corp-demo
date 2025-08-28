@@ -55,4 +55,9 @@ class Indent extends Model
     {
         return $this->hasMany(AccountEntry::class);
     }
+
+    public function items(): HasMany
+    {
+        return $this->hasMany(IndentItem::class);
+    }
 }

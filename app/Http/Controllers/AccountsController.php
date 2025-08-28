@@ -68,7 +68,7 @@ class AccountsController extends Controller
                 ->sum('total_amount'),
             'avg_payment_time' => DebitNote::where('status', 'paid')
                 ->whereNotNull('paid_date')
-                ->avg(DB::raw('DATEDIFF(paid_date, issue_date)')),
+                ->avg(DB::raw('julianday(paid_date) - julianday(issue_date)')),
             'collection_rate' => $this->calculateCollectionRate(),
         ];
     }

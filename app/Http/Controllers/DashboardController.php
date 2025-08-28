@@ -16,37 +16,37 @@ class DashboardController extends Controller
 {
     public function index()
     {
-        // KPIs
+        // KPIs (demo data)
         $kpis = [
-            'total_indents' => Indent::count(),
-            'total_lcs' => LetterOfCredit::count(),
-            'total_shipments' => Shipment::count(),
-            'total_customers' => Customer::count(),
-            'total_products' => Product::count(),
-            'total_principals' => Principal::count(),
+            'total_indents' => 18,
+            'total_lcs' => 14,
+            'total_shipments' => 20,
+            'total_customers' => 25,
+            'total_products' => 50,
+            'total_principals' => 20,
         ];
 
-        // Alerts
+        // Alerts (demo data)
         $alerts = [
-            'pending_quotations' => Quotation::where('status', 'Draft')->count(),
-            'expiring_lcs' => LetterOfCredit::where('expiry_date', '<=', Carbon::now()->addDays(30))->count(),
-            'pending_shipments' => Shipment::where('status', 'Pending')->count(),
+            'pending_quotations' => 5,
+            'expiring_lcs' => 3,
+            'pending_shipments' => 8,
         ];
 
-        // Chart data (static for demo)
+        // Chart data (pharmaceutical demo data)
         $chartData = [
             'indent_volume' => [
                 'labels' => ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
-                'data' => [12, 19, 15, 25, 22, 30],
+                'data' => [1250, 1890, 1560, 2480, 2230, 3050],
             ],
             'shipment_volume' => [
                 'labels' => ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
-                'data' => [10, 15, 12, 20, 18, 25],
-                'target' => [15, 15, 15, 15, 15, 15],
+                'data' => [1180, 1750, 1420, 2280, 2080, 2850],
+                'target' => [1500, 1500, 1500, 1500, 1500, 1500],
             ],
             'customer_business' => [
-                'labels' => ['ABC Trading', 'XYZ Importers', 'Global Merchants', 'Pacific Traders', 'Euro Commerce'],
-                'data' => [45000, 38000, 32000, 28000, 25000],
+                'labels' => ['DMCH', 'Square Hospital', 'Apollo Hospitals', 'United Hospital', 'Popular Medical'],
+                'data' => [1250000, 980000, 1560000, 870000, 1340000],
             ],
         ];
 

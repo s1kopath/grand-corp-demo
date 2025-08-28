@@ -14,7 +14,7 @@
                             </div>
                             <div class="col-6 text-end">
                                 <span class="btn btn-sm btn-outline-light me-3">
-                                    <i class="material-icons text-sm me-1">group_add</i>Create Team
+                                    <i class="material-symbols-rounded text-sm me-1">group_add</i>Create Team
                                 </span>
                             </div>
                         </div>
@@ -23,7 +23,7 @@
                 <div class="card-body">
                     <!-- Demo Info Card -->
                     <div class="alert alert-info text-white font-weight-bold" role="alert">
-                        <i class="material-icons text-sm me-2">info</i>
+                        <i class="material-symbols-rounded text-sm me-2">info</i>
                         <strong>Demo Teams:</strong> This page displays team structure and hierarchy. All team data is
                         pre-seeded for demonstration purposes.
                     </div>
@@ -43,7 +43,7 @@
                                         <div class="col-4 text-end">
                                             <div
                                                 class="icon icon-shape bg-gradient-primary shadow-primary text-center rounded-circle">
-                                                <i class="material-icons opacity-10">groups</i>
+                                                <i class="material-symbols-rounded opacity-10">groups</i>
                                             </div>
                                         </div>
                                     </div>
@@ -63,7 +63,7 @@
                                         <div class="col-4 text-end">
                                             <div
                                                 class="icon icon-shape bg-gradient-success shadow-success text-center rounded-circle">
-                                                <i class="material-icons opacity-10">people</i>
+                                                <i class="material-symbols-rounded opacity-10">people</i>
                                             </div>
                                         </div>
                                     </div>
@@ -83,7 +83,7 @@
                                         <div class="col-4 text-end">
                                             <div
                                                 class="icon icon-shape bg-gradient-info shadow-info text-center rounded-circle">
-                                                <i class="material-icons opacity-10">check_circle</i>
+                                                <i class="material-symbols-rounded opacity-10">check_circle</i>
                                             </div>
                                         </div>
                                     </div>
@@ -104,7 +104,7 @@
                                         <div class="col-4 text-end">
                                             <div
                                                 class="icon icon-shape bg-gradient-warning shadow-warning text-center rounded-circle">
-                                                <i class="material-icons opacity-10">person</i>
+                                                <i class="material-symbols-rounded opacity-10">person</i>
                                             </div>
                                         </div>
                                     </div>
@@ -184,15 +184,15 @@
                                                     <div class="d-flex justify-content-center">
                                                         <a href="#" class="btn btn-link text-dark px-2 mb-0"
                                                             title="View Details">
-                                                            <i class="material-icons text-sm">visibility</i>
+                                                            <i class="material-symbols-rounded text-sm">visibility</i>
                                                         </a>
                                                         <a href="#" class="btn btn-link text-dark px-2 mb-0"
                                                             title="Edit Team">
-                                                            <i class="material-icons text-sm">edit</i>
+                                                            <i class="material-symbols-rounded text-sm">edit</i>
                                                         </a>
                                                         <a href="#" class="btn btn-link text-dark px-2 mb-0"
                                                             title="Manage Members">
-                                                            <i class="material-icons text-sm">group</i>
+                                                            <i class="material-symbols-rounded text-sm">group</i>
                                                         </a>
                                                     </div>
                                                 </td>
@@ -218,7 +218,8 @@
                                                         <div class="d-flex align-items-center mb-2">
                                                             <div
                                                                 class="icon icon-shape bg-gradient-{{ $team->status === 'active' ? 'success' : 'secondary' }} shadow-{{ $team->status === 'active' ? 'success' : 'secondary' }} text-center rounded-circle me-3">
-                                                                <i class="material-icons opacity-10 text-white">groups</i>
+                                                                <i
+                                                                    class="material-symbols-rounded opacity-10 text-white">groups</i>
                                                             </div>
                                                             <div>
                                                                 <h6 class="mb-0">{{ $team->name }}</h6>
@@ -230,7 +231,7 @@
                                                             <div class="d-flex align-items-center">
                                                                 <div
                                                                     class="icon icon-shape bg-gradient-primary shadow-primary text-center rounded-circle me-2">
-                                                                    <i class="material-icons opacity-10 text-white"
+                                                                    <i class="material-symbols-rounded opacity-10 text-white"
                                                                         style="font-size: 1rem;">person</i>
                                                                 </div>
                                                                 <div>
@@ -282,7 +283,7 @@
                                                     <div class="timeline-block mb-3">
                                                         <span class="timeline-step">
                                                             <i
-                                                                class="material-icons text-success text-gradient">check_circle</i>
+                                                                class="material-symbols-rounded text-success text-gradient">check_circle</i>
                                                         </span>
                                                         <div class="timeline-content">
                                                             <h6 class="text-dark text-sm font-weight-bold mb-0">
@@ -305,17 +306,21 @@
                                         <div class="card-body p-3">
                                             <div class="d-grid gap-2">
                                                 <button class="btn btn-sm bg-gradient-primary text-white" type="button">
-                                                    <i class="material-icons text-sm me-2">group_add</i>Create New Team
+                                                    <i class="material-symbols-rounded text-sm me-2">group_add</i>Create
+                                                    New Team
                                                 </button>
                                                 <button class="btn btn-sm bg-gradient-success text-white" type="button">
-                                                    <i class="material-icons text-sm me-2">person_add</i>Assign Team
+                                                    <i class="material-symbols-rounded text-sm me-2">person_add</i>Assign
+                                                    Team
                                                     Manager
                                                 </button>
                                                 <button class="btn btn-sm bg-gradient-info text-white" type="button">
-                                                    <i class="material-icons text-sm me-2">group</i>Manage Members
+                                                    <i class="material-symbols-rounded text-sm me-2">group</i>Manage
+                                                    Members
                                                 </button>
                                                 <button class="btn btn-sm bg-gradient-warning text-white" type="button">
-                                                    <i class="material-icons text-sm me-2">assessment</i>Team Reports
+                                                    <i class="material-symbols-rounded text-sm me-2">assessment</i>Team
+                                                    Reports
                                                 </button>
                                             </div>
                                         </div>

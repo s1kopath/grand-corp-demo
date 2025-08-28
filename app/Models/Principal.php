@@ -32,4 +32,14 @@ class Principal extends Model
     {
         return $this->hasMany(Indent::class);
     }
+
+    public function shipments(): HasMany
+    {
+        return $this->hasMany(Shipment::class);
+    }
+
+    public function letterOfCredits(): HasMany
+    {
+        return $this->hasMany(LetterOfCredit::class);
+    }
 }

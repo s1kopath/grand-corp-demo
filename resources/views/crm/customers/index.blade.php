@@ -130,7 +130,7 @@
                                         <td class="align-middle text-center">
                                             <a href="{{ route('crm.customers.show', $customer) }}"
                                                 class="btn btn-link text-dark px-3 mb-0" title="View Details">
-                                                <i class="material-icons text-sm me-2">visibility</i>View
+                                                <i class="material-symbols-rounded text-sm me-2">visibility</i>View
                                             </a>
                                         </td>
                                     </tr>

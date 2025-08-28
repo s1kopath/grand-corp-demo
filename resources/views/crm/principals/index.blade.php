@@ -18,9 +18,8 @@
                             <div class="col-md-4">
                                 <div class="input-group input-group-outline">
                                     <label class="form-label">Search Principals</label>
-                                    <input type="text" class="form-control" name="search" 
-                                           value="{{ request('search') }}" 
-                                           title="Search by name, email, company...">
+                                    <input type="text" class="form-control" name="search"
+                                        value="{{ request('search') }}" title="Search by name, email, company...">
                                 </div>
                             </div>
                             <div class="col-md-3">
@@ -28,8 +27,8 @@
                                     <label class="form-label">Country</label>
                                     <select class="form-control" name="country">
                                         <option value="" selected disabled></option>
-                                        @foreach($countries as $country)
-                                            <option value="{{ $country }}" 
+                                        @foreach ($countries as $country)
+                                            <option value="{{ $country }}"
                                                 {{ request('country') == $country ? 'selected' : '' }}>
                                                 {{ $country }}
                                             </option>
@@ -42,9 +41,12 @@
                                     <label class="form-label">Status</label>
                                     <select class="form-control" name="status">
                                         <option value="" selected disabled></option>
-                                        <option value="active" {{ request('status') == 'active' ? 'selected' : '' }}>Active</option>
-                                        <option value="inactive" {{ request('status') == 'inactive' ? 'selected' : '' }}>Inactive</option>
-                                        <option value="pending" {{ request('status') == 'pending' ? 'selected' : '' }}>Pending</option>
+                                        <option value="active" {{ request('status') == 'active' ? 'selected' : '' }}>Active
+                                        </option>
+                                        <option value="inactive" {{ request('status') == 'inactive' ? 'selected' : '' }}>
+                                            Inactive</option>
+                                        <option value="pending" {{ request('status') == 'pending' ? 'selected' : '' }}>
+                                            Pending</option>
                                     </select>
                                 </div>
                             </div>
@@ -62,13 +64,25 @@
                         <table class="table align-items-center mb-0">
                             <thead>
                                 <tr>
-                                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Principal</th>
-                                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Company</th>
-                                    <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Contact</th>
-                                    <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Country</th>
-                                    <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Status</th>
-                                    <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Products</th>
-                                    <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Action</th>
+                                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
+                                        Principal</th>
+                                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">
+                                        Company</th>
+                                    <th
+                                        class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
+                                        Contact</th>
+                                    <th
+                                        class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
+                                        Country</th>
+                                    <th
+                                        class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
+                                        Status</th>
+                                    <th
+                                        class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
+                                        Products</th>
+                                    <th
+                                        class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
+                                        Action</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -91,10 +105,11 @@
                                             <p class="text-xs text-secondary mb-0">{{ $principal->phone }}</p>
                                         </td>
                                         <td class="align-middle text-center">
-                                            <span class="text-secondary text-xs font-weight-bold">{{ $principal->country }}</span>
+                                            <span
+                                                class="text-secondary text-xs font-weight-bold">{{ $principal->country }}</span>
                                         </td>
                                         <td class="align-middle text-center text-sm">
-                                            @if($principal->status === 'active')
+                                            @if ($principal->status === 'active')
                                                 <span class="badge badge-sm bg-gradient-success">Active</span>
                                             @elseif($principal->status === 'inactive')
                                                 <span class="badge badge-sm bg-gradient-secondary">Inactive</span>
@@ -113,9 +128,9 @@
                                             </div>
                                         </td>
                                         <td class="align-middle text-center">
-                                            <a href="{{ route('crm.principals.show', $principal) }}" 
-                                               class="btn btn-link text-dark px-3 mb-0" title="View Details">
-                                                <i class="material-icons text-sm me-2">visibility</i>View
+                                            <a href="{{ route('crm.principals.show', $principal) }}"
+                                                class="btn btn-link text-dark px-3 mb-0" title="View Details">
+                                                <i class="material-symbols-rounded text-sm me-2">visibility</i>View
                                             </a>
                                         </td>
                                     </tr>

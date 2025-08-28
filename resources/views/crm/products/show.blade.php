@@ -14,7 +14,7 @@
                             </div>
                             <div class="col-6 text-end">
                                 <a href="{{ route('crm.products.index') }}" class="btn btn-sm btn-outline-light me-3">
-                                    <i class="material-icons text-sm me-1">arrow_back</i>Back to List
+                                    <i class="material-symbols-rounded text-sm me-1">arrow_back</i>Back to List
                                 </a>
                             </div>
                         </div>
@@ -158,7 +158,7 @@
                                                 <td class="align-middle text-center">
                                                     <a href="{{ route('crm.principals.show', $principal) }}"
                                                         class="btn btn-link text-dark px-3 mb-0" title="View Principal">
-                                                        <i class="material-icons text-sm me-2">visibility</i>View
+                                                        <i class="material-symbols-rounded text-sm me-2">visibility</i>View
                                                     </a>
                                                 </td>
                                             </tr>
@@ -240,7 +240,8 @@
                                                         <a href="{{ route('quotations.show', $item->quotation) }}"
                                                             class="btn btn-link text-dark px-3 mb-0"
                                                             title="View Quotation">
-                                                            <i class="material-icons text-sm me-2">visibility</i>View
+                                                            <i
+                                                                class="material-symbols-rounded text-sm me-2">visibility</i>View
                                                         </a>
                                                     @else
                                                         <span class="text-secondary text-xs">N/A</span>
@@ -326,7 +327,8 @@
                                                     @if ($item->indent)
                                                         <a href="{{ route('indents.show', $item->indent) }}"
                                                             class="btn btn-link text-dark px-3 mb-0" title="View Indent">
-                                                            <i class="material-icons text-sm me-2">visibility</i>View
+                                                            <i
+                                                                class="material-symbols-rounded text-sm me-2">visibility</i>View
                                                         </a>
                                                     @else
                                                         <span class="text-secondary text-xs">N/A</span>

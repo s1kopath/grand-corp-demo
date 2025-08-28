@@ -78,6 +78,15 @@ Route::middleware([AdminMiddleware::class])->group(function () {
     Route::prefix('reports')->name('reports.')->group(function () {
         Route::get('/', [ReportController::class, 'index'])->name('index');
         Route::get('export/{slug}', [ReportController::class, 'export'])->name('export');
+
+        // Detailed Reports
+        Route::get('pareto-analysis', [ReportController::class, 'paretoAnalysis'])->name('pareto-analysis');
+        Route::get('principal-product-volume', [ReportController::class, 'principalProductVolume'])->name('principal-product-volume');
+        Route::get('product-principal-engagement', [ReportController::class, 'productPrincipalEngagement'])->name('product-principal-engagement');
+        Route::get('indents-vs-shipments', [ReportController::class, 'indentsVsShipments'])->name('indents-vs-shipments');
+        Route::get('customer-business-volume', [ReportController::class, 'customerBusinessVolume'])->name('customer-business-volume');
+        Route::get('outstanding-payments', [ReportController::class, 'outstandingPayments'])->name('outstanding-payments');
+        Route::get('lc-expiry-analysis', [ReportController::class, 'lcExpiryAnalysis'])->name('lc-expiry-analysis');
     });
 
     // Admin
@@ -85,7 +94,6 @@ Route::middleware([AdminMiddleware::class])->group(function () {
         Route::get('teams', [AdminController::class, 'teams'])->name('teams');
         Route::get('users', [AdminController::class, 'users'])->name('users');
         Route::get('parameters', [AdminController::class, 'parameters'])->name('parameters');
-        Route::get('branding', [AdminController::class, 'branding'])->name('branding');
     });
 
     // Legacy routes (keeping for compatibility)

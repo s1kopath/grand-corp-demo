@@ -42,14 +42,12 @@
                             </div>
                             <div class="col-md-2">
                                 <div class="input-group input-group-outline">
-                                    <label class="form-label">From Date</label>
                                     <input type="date" class="form-control" name="date_from"
                                         value="{{ request('date_from') }}">
                                 </div>
                             </div>
                             <div class="col-md-2">
                                 <div class="input-group input-group-outline">
-                                    <label class="form-label">To Date</label>
                                     <input type="date" class="form-control" name="date_to"
                                         value="{{ request('date_to') }}">
                                 </div>
@@ -95,7 +93,8 @@
                                                 <div class="d-flex flex-column justify-content-center">
                                                     <h6 class="mb-0 text-sm">{{ $indent->indent_number }}</h6>
                                                     <p class="text-xs text-secondary mb-0">Delivery:
-                                                        {{ $indent->delivery_date->format('M d, Y') }}</p>
+                                                        {{ $indent->updated_at ? $indent->updated_at->format('M d, Y') : 'N/A' }}
+                                                    </p>
                                                 </div>
                                             </div>
                                         </td>
@@ -107,7 +106,7 @@
                                         </td>
                                         <td class="align-middle text-center">
                                             <span class="text-secondary text-xs font-weight-bold">
-                                                {{ $indent->indent_date->format('M d, Y') }}
+                                                {{ $indent->created_at ? $indent->created_at->format('M d, Y') : 'N/A' }}
                                             </span>
                                         </td>
                                         <td class="align-middle text-center text-sm">
@@ -140,12 +139,12 @@
                                             <div class="d-flex justify-content-center">
                                                 <a href="{{ route('indents.show', $indent) }}"
                                                     class="btn btn-link text-dark px-2 mb-0" title="View Details">
-                                                    <i class="material-icons text-sm">visibility</i>
+                                                    <i class="material-symbols-rounded text-sm">visibility</i>
                                                 </a>
                                                 @if ($indent->status === 'approved')
                                                     <a href="{{ route('indents.goToLc', $indent) }}"
                                                         class="btn btn-link text-info px-2 mb-0" title="Issue L/C">
-                                                        <i class="material-icons text-sm">account_balance</i>
+                                                        <i class="material-symbols-rounded text-sm">account_balance</i>
                                                     </a>
                                                 @endif
                                             </div>

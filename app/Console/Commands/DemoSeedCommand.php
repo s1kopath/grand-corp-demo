@@ -6,6 +6,7 @@ use Illuminate\Console\Command;
 use App\Models\Quotation;
 use App\Models\QuotationItem;
 use App\Models\Indent;
+use App\Models\IndentItem;
 use App\Models\LetterOfCredit;
 use App\Models\Shipment;
 use App\Models\ShipmentDocument;
@@ -13,7 +14,6 @@ use App\Models\Certificate;
 use App\Models\DebitNote;
 use App\Models\AccountEntry;
 use App\Models\Parameter;
-use App\Models\Branding;
 use App\Models\DataBankRecord;
 use App\Models\PriceHistory;
 use App\Models\Customer;
@@ -24,17 +24,30 @@ use Carbon\Carbon;
 class DemoSeedCommand extends Command
 {
     protected $signature = 'demo:seed';
-    protected $description = 'Seed demo data for Grand Corporation IMS';
+    protected $description = 'Seed demo data for PharmaCorp IMS';
 
     public function handle()
     {
         $this->info('Seeding demo data...');
 
+        // Clear existing data to avoid unique constraint violations
+        $this->info('Clearing existing data...');
+        AccountEntry::truncate();
+        DebitNote::truncate();
+        Certificate::truncate();
+        ShipmentDocument::truncate();
+        Shipment::truncate();
+        LetterOfCredit::truncate();
+        IndentItem::truncate();
+        Indent::truncate();
+        QuotationItem::truncate();
+        Quotation::truncate();
+        PriceHistory::truncate();
+        DataBankRecord::truncate();
+        Parameter::truncate();
+
         // Seed Parameters
         $this->seedParameters();
-
-        // Seed Branding
-        $this->seedBranding();
 
         // Seed Data Bank Records
         $this->seedDataBankRecords();
@@ -47,6 +60,9 @@ class DemoSeedCommand extends Command
 
         // Seed Indents
         $this->seedIndents();
+
+        // Seed Indent Items
+        $this->seedIndentItems();
 
         // Seed Letters of Credit
         $this->seedLetterOfCredits();
@@ -87,23 +103,11 @@ class DemoSeedCommand extends Command
         }
     }
 
-    private function seedBranding()
-    {
-        Branding::updateOrCreate(
-            ['id' => 1],
-            [
-                'company_name' => 'Grand Corporation IMS',
-                'logo_path' => '/assets/img/logo-ct-dark.png',
-                'theme_color' => '#1976d2',
-            ]
-        );
-    }
-
     private function seedDataBankRecords()
     {
-        $products = ['LED TV', 'Smartphone', 'Laptop', 'Tablet', 'Headphones'];
-        $principals = ['China Steel Corp', 'Korean Electronics Ltd', 'Japanese Auto Parts'];
-        $regions = ['Asia', 'Europe', 'North America'];
+        $products = ['Amoxicillin 500mg', 'Paracetamol 500mg', 'Metformin 500mg', 'Amlodipine 5mg', 'Insulin Regular', 'COVID-19 Vaccine', 'Stethoscope', 'Blood Pressure Monitor', 'Surgical Mask', 'COVID-19 Test Kit'];
+        $principals = ['Pfizer Inc', 'Novartis AG', 'Johnson & Johnson', 'Roche Holding AG', 'Merck & Co', 'Sun Pharmaceutical', 'Dr. Reddy\'s Laboratories', 'Cipla Ltd', 'Aurobindo Pharma', 'Sinopharm Group'];
+        $regions = ['Asia', 'Europe', 'North America', 'South Asia', 'Middle East'];
         $years = [2020, 2021, 2022, 2023, 2024];
 
         for ($i = 0; $i < 50; $i++) {
@@ -122,8 +126,8 @@ class DemoSeedCommand extends Command
 
     private function seedPriceHistory()
     {
-        $products = ['LED TV', 'Smartphone', 'Laptop'];
-        $principals = ['China Steel Corp', 'Korean Electronics Ltd'];
+        $products = ['Amoxicillin 500mg', 'Paracetamol 500mg', 'Metformin 500mg'];
+        $principals = ['Pfizer Inc', 'Novartis AG', 'Johnson & Johnson'];
         $years = [2020, 2021, 2022, 2023, 2024];
 
         foreach ($products as $product) {
@@ -190,11 +194,31 @@ class DemoSeedCommand extends Command
         }
     }
 
+    private function seedIndentItems()
+    {
+        $indents = Indent::all();
+        $products = Product::all();
+
+        foreach ($indents as $indent) {
+            // Create 2-4 items per indent
+            $itemCount = rand(2, 4);
+
+            for ($i = 0; $i < $itemCount; $i++) {
+                \App\Models\IndentItem::create([
+                    'indent_id' => $indent->id,
+                    'product_id' => $products->random()->id,
+                    'qty' => rand(100, 5000),
+                    'price' => rand(10, 500),
+                ]);
+            }
+        }
+    }
+
     private function seedLetterOfCredits()
     {
         $indents = Indent::where('status', 'LC_Issued')->get();
         $customers = Customer::all();
-        $banks = ['Chase Bank', 'Wells Fargo', 'Bank of America', 'Citibank'];
+        $banks = ['Sonali Bank', 'Rupali Bank', 'Janata Bank', 'Agrani Bank', 'Pubali Bank', 'Eastern Bank', 'City Bank', 'Prime Bank'];
 
         for ($i = 1; $i <= 14; $i++) {
             $issueDate = Carbon::now()->subDays(rand(30, 180));
@@ -254,14 +278,40 @@ class DemoSeedCommand extends Command
     {
         $shipments = Shipment::where('status', 'Delivered')->get();
         $customers = Customer::all();
+        $statuses = ['pending', 'approved', 'paid', 'cancelled'];
 
         for ($i = 1; $i <= 12; $i++) {
+            $issueDate = Carbon::now()->subDays(rand(1, 30));
+            $dueDate = $issueDate->copy()->addDays(rand(15, 45));
+            $subtotal = rand(1000, 50000);
+            $taxRate = rand(0, 15);
+            $taxAmount = $subtotal * ($taxRate / 100);
+            $totalAmount = $subtotal + $taxAmount;
+
             DebitNote::create([
                 'number' => 'DN-' . str_pad($i, 4, '0', STR_PAD_LEFT),
+                'debit_note_number' => 'DN-' . str_pad($i, 4, '0', STR_PAD_LEFT),
+                'reference_number' => 'REF-' . str_pad($i, 5, '0', STR_PAD_LEFT),
                 'shipment_id' => $shipments->count() > 0 ? $shipments->random()->id : Shipment::first()->id,
                 'customer_id' => $customers->random()->id,
-                'total_amount' => rand(5000, 50000),
-                'issued_at' => Carbon::now()->subDays(rand(1, 30)),
+                'status' => $statuses[array_rand($statuses)],
+                'issue_date' => $issueDate,
+                'due_date' => $dueDate,
+                'paid_date' => rand(0, 1) ? $issueDate->copy()->addDays(rand(1, 30)) : null,
+                'total_amount' => $totalAmount,
+                'subtotal' => $subtotal,
+                'tax_rate' => $taxRate,
+                'tax_amount' => $taxAmount,
+                'currency' => 'USD',
+                'payment_terms' => 'Net 30 days',
+                'late_payment_fee' => '2% per month',
+                'terms_conditions' => 'Standard payment terms apply. Payment is due within the specified period. Late payments may incur additional charges.',
+                'charges' => [
+                    ['description' => 'Freight Charges', 'amount' => rand(100, 1000)],
+                    ['description' => 'Insurance', 'amount' => rand(50, 500)],
+                    ['description' => 'Handling Fee', 'amount' => rand(25, 250)],
+                ],
+                'issued_at' => $issueDate,
             ]);
         }
     }
@@ -269,12 +319,15 @@ class DemoSeedCommand extends Command
     private function seedAccountEntries()
     {
         $indents = Indent::all();
+        $debitNotes = DebitNote::all();
 
+        // Create account entries for indents
         foreach ($indents as $indent) {
             // Create debit entries
             for ($i = 0; $i < rand(2, 5); $i++) {
                 AccountEntry::create([
                     'indent_id' => $indent->id,
+                    'debit_note_id' => null,
                     'type' => 'Debit',
                     'amount' => rand(1000, 10000),
                     'entry_date' => Carbon::now()->subDays(rand(1, 30)),
@@ -286,12 +339,25 @@ class DemoSeedCommand extends Command
             for ($i = 0; $i < rand(1, 3); $i++) {
                 AccountEntry::create([
                     'indent_id' => $indent->id,
+                    'debit_note_id' => null,
                     'type' => 'Credit',
                     'amount' => rand(500, 5000),
                     'entry_date' => Carbon::now()->subDays(rand(1, 30)),
                     'notes' => 'Credit entry for ' . $indent->number,
                 ]);
             }
+        }
+
+        // Create account entries for debit notes
+        foreach ($debitNotes as $debitNote) {
+            AccountEntry::create([
+                'indent_id' => null,
+                'debit_note_id' => $debitNote->id,
+                'type' => 'Credit',
+                'amount' => $debitNote->total_amount,
+                'entry_date' => $debitNote->issued_at,
+                'notes' => 'Debit note payment for ' . $debitNote->number,
+            ]);
         }
     }
 }
