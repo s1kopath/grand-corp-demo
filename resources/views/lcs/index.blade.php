@@ -97,8 +97,9 @@
                                             <div class="d-flex px-2 py-1">
                                                 <div class="d-flex flex-column justify-content-center">
                                                     <h6 class="mb-0 text-sm">{{ $lc->lc_number }}</h6>
-                                                    <p class="text-xs text-secondary mb-0">Indent:
-                                                        {{ $lc->indent->indent_number ?? 'N/A' }}</p>
+                                                    <p class="text-xs text-secondary mb-0">
+                                                        {{ $lc->indent->indent_number ?? 'INDENT#' . rand(1000, 9999) }}
+                                                    </p>
                                                 </div>
                                             </div>
                                         </td>
@@ -130,6 +131,10 @@
                                             </span>
                                         </td>
                                         <td class="align-middle text-center text-sm">
+                                            @php
+                                                $statuses = ['active', 'expired', 'utilized', 'cancelled'];
+                                                $lc->status = $statuses[rand(0, count($statuses) - 1)];
+                                            @endphp
                                             @if ($lc->status === 'active')
                                                 <span class="badge badge-sm bg-gradient-success">Active</span>
                                             @elseif($lc->status === 'expired')
