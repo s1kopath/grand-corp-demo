@@ -238,7 +238,7 @@
                                     <div class="timeline-content">
                                         <h6 class="text-dark text-sm font-weight-bold mb-0">Quotation Created</h6>
                                         <p class="text-secondary font-weight-bold text-xs mt-1 mb-0">
-                                            {{ $quotation->quotation_date->format('M d, Y') }}
+                                            {{ $quotation->quotation_date ? $quotation->quotation_date->format('M d, Y') : 'N/A' }}
                                         </p>
                                     </div>
                                 </div>
