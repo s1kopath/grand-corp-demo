@@ -231,7 +231,7 @@
                                                 </td>
                                                 <td class="align-middle text-center">
                                                     <span class="text-secondary text-xs font-weight-bold">
-                                                        {{ $quotation->quotation_date->format('M d, Y') }}
+                                                        {{ $quotation->quotation_date ? $quotation->quotation_date->format('M d, Y') : 'N/A' }}
                                                     </span>
                                                 </td>
                                                 <td class="align-middle text-center text-sm">

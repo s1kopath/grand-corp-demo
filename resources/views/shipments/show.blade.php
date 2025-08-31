@@ -392,7 +392,7 @@
                                     <div class="timeline-content">
                                         <h6 class="text-dark text-sm font-weight-bold mb-0">L/C Issued</h6>
                                         <p class="text-secondary font-weight-bold text-xs mt-1 mb-0">
-                                            {{ $shipment->letterOfCredit->issue_date->format('M d, Y') ?? 'N/A' }}
+                                            {{ $shipment->letterOfCredit ? $shipment->letterOfCredit->issue_date->format('M d, Y') : 'N/A' }}
                                         </p>
                                     </div>
                                 </div>
@@ -407,7 +407,7 @@
                                     <div class="timeline-content">
                                         <h6 class="text-dark text-sm font-weight-bold mb-0">Shipment Created</h6>
                                         <p class="text-secondary font-weight-bold text-xs mt-1 mb-0">
-                                            {{ $shipment->created_at->format('M d, Y') }}
+                                            {{ $shipment->created_at ? $shipment->created_at->format('M d, Y') : 'N/A' }}
                                         </p>
                                     </div>
                                 </div>

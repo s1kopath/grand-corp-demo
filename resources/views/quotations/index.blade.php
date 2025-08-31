@@ -52,7 +52,11 @@
                             </div>
                             <div class="col-md-3">
                                 <button type="submit" class="btn btn-primary me-2">Search</button>
-                                <a href="{{ route('quotations.index') }}" class="btn btn-secondary">Clear</a>
+                                <a href="{{ route('quotations.index') }}" class="btn btn-secondary me-2">Clear</a>
+                                <button type="button" class="btn btn-primary"
+                                    onclick="alert('Application in demo version')">
+                                    <i class="material-symbols-rounded text-sm me-2">add</i>Add New
+                                </button>
                             </div>
                         </form>
                     </div>

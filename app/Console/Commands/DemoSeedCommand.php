@@ -24,7 +24,7 @@ use Carbon\Carbon;
 class DemoSeedCommand extends Command
 {
     protected $signature = 'demo:seed';
-    protected $description = 'Seed demo data for PharmaCorp IMS';
+    protected $description = 'Seed demo data for Grand Corp IMS';
 
     public function handle()
     {

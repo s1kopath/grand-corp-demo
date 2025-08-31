@@ -54,11 +54,11 @@
                                 </div>
                                 <div class="col-6">
                                     <p class="text-sm mb-1"><strong>Issue Date:</strong></p>
-                                    <p class="text-sm text-secondary mb-3">{{ $lc->issue_date->format('M d, Y') }}</p>
+                                    <p class="text-sm text-secondary mb-3">{{ $lc->issue_date ? $lc->issue_date->format('M d, Y') : 'N/A' }}</p>
                                 </div>
                                 <div class="col-6">
                                     <p class="text-sm mb-1"><strong>Expiry Date:</strong></p>
-                                    <p class="text-sm text-secondary mb-3">{{ $lc->expiry_date->format('M d, Y') }}</p>
+                                    <p class="text-sm text-secondary mb-3">{{ $lc->expiry_date ? $lc->expiry_date->format('M d, Y') : 'N/A' }}</p>
                                 </div>
                                 <div class="col-6">
                                     <p class="text-sm mb-1"><strong>Issuing Bank:</strong></p>
@@ -110,7 +110,8 @@
                                         <div class="col-6">
                                             <p class="text-sm mb-1"><strong>Indent Date:</strong></p>
                                             <p class="text-sm text-secondary mb-3">
-                                                {{ $lc->indent->indent_date->format('M d, Y') ?? 'N/A' }}</p>
+                                                {{ $lc->indent->indent_date ? $lc->indent->indent_date->format('M d, Y') : 'N/A' }}
+                                            </p>
                                         </div>
                                         <div class="col-6">
                                             <p class="text-sm mb-1"><strong>Customer:</strong></p>
@@ -139,7 +140,8 @@
                                         <div class="col-6">
                                             <p class="text-sm mb-1"><strong>Delivery Date:</strong></p>
                                             <p class="text-sm text-secondary mb-3">
-                                                {{ $lc->indent->delivery_date->format('M d, Y') ?? 'N/A' }}</p>
+                                                {{ $lc->indent->delivery_date ? $lc->indent->delivery_date->format('M d, Y') : 'N/A' }}
+                                            </p>
                                         </div>
                                         <div class="col-6">
                                             <p class="text-sm mb-1"><strong>Indent Status:</strong></p>
@@ -347,7 +349,7 @@
                                     <div class="timeline-content">
                                         <h6 class="text-dark text-sm font-weight-bold mb-0">Indent Created</h6>
                                         <p class="text-secondary font-weight-bold text-xs mt-1 mb-0">
-                                            {{ $lc->indent->indent_date->format('M d, Y') ?? 'N/A' }}
+                                            {{ $lc->indent->indent_date ? $lc->indent->indent_date->format('M d, Y') : 'N/A' }}
                                         </p>
                                     </div>
                                 </div>

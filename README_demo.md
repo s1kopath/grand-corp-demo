@@ -1,4 +1,4 @@
-# PharmaCorp IMS - Pharmaceutical Inventory Management System
+# Grand Corp IMS - Pharmaceutical Inventory Management System
 
 A comprehensive **read-only demo** of a Pharmaceutical Inventory Management System (IMS) built with Laravel 12 and Blade templates. This demo showcases end-to-end pharmaceutical business workflow navigation across all modules with static, pre-seeded data including medicines, medical devices, and healthcare institutions.
 

@@ -56,12 +56,11 @@
                                 <div class="col-6">
                                     <p class="text-sm mb-1"><strong>Quotation Date:</strong></p>
                                     <p class="text-sm text-secondary mb-3">
-                                        {{ $quotation->quotation_date->format('M d, Y') }}</p>
+                                        {{ $quotation->quotation_date ? $quotation->quotation_date->format('M d, Y') : 'N/A' }}</p>
                                 </div>
                                 <div class="col-6">
                                     <p class="text-sm mb-1"><strong>Valid Until:</strong></p>
-                                    <p class="text-sm text-secondary mb-3">{{ $quotation->valid_until->format('M d, Y') }}
-                                    </p>
+                                    <p class="text-sm text-secondary mb-3">{{ $quotation->valid_until ? $quotation->valid_until->format('M d, Y') : 'N/A' }}</p>
                                 </div>
                             </div>
                         </div>

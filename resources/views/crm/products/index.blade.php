@@ -54,8 +54,12 @@
                             <div class="col-md-2">
                                 <button type="submit" class="btn btn-primary w-100">Search</button>
                             </div>
-                            <div class="col-12">
+                            <div class="col-12 d-flex justify-content-between">
                                 <a href="{{ route('crm.products.index') }}" class="btn btn-secondary">Clear Filters</a>
+                                <button type="button" class="btn btn-primary"
+                                    onclick="alert('Application in demo version')">
+                                    <i class="material-symbols-rounded text-sm me-2">add</i>Add New
+                                </button>
                             </div>
                         </form>
                     </div>

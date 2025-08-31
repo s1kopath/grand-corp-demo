@@ -286,7 +286,7 @@
                                                             <div class="d-flex px-2 py-1">
                                                                 <div class="d-flex flex-column justify-content-center">
                                                                     <h6 class="mb-0 text-sm">
-                                                                        {{ $transaction->entry_date->format('M d, Y') }}
+                                                                        {{ $transaction->entry_date ? $transaction->entry_date->format('M d, Y') : 'N/A' }}
                                                                     </h6>
                                                                 </div>
                                                             </div>
@@ -355,7 +355,8 @@
                                                         ${{ number_format($payment->total_amount, 2) }}
                                                     </p>
                                                     <p class="text-secondary font-weight-bold text-xs mt-1 mb-0">
-                                                        Due: {{ $payment->due_date->format('M d, Y') }}
+                                                        Due:
+                                                        {{ $payment->due_date ? $payment->due_date->format('M d, Y') : 'N/A' }}
                                                     </p>
                                                 </div>
                                             </div>

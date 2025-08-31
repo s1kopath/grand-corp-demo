@@ -52,7 +52,11 @@
                             </div>
                             <div class="col-md-3">
                                 <button type="submit" class="btn btn-primary me-2">Search</button>
-                                <a href="{{ route('lcs.index') }}" class="btn btn-secondary">Clear</a>
+                                <a href="{{ route('lcs.index') }}" class="btn btn-secondary me-2">Clear</a>
+                                <button type="button" class="btn btn-primary"
+                                    onclick="alert('Application in demo version')">
+                                    <i class="material-symbols-rounded text-sm me-2">add</i>Add New
+                                </button>
                             </div>
                         </form>
                     </div>
@@ -112,12 +116,12 @@
                                         </td>
                                         <td class="align-middle text-center">
                                             <span class="text-secondary text-xs font-weight-bold">
-                                                {{ $lc->issue_date->format('M d, Y') }}
+                                                {{ $lc->issue_date ? $lc->issue_date->format('M d, Y') : 'N/A' }}
                                             </span>
                                         </td>
                                         <td class="align-middle text-center">
                                             <span class="text-secondary text-xs font-weight-bold">
-                                                {{ $lc->expiry_date->format('M d, Y') }}
+                                                {{ $lc->expiry_date ? $lc->expiry_date->format('M d, Y') : 'N/A' }}
                                             </span>
                                         </td>
                                         <td class="align-middle text-center">

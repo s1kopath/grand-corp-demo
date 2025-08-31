@@ -104,12 +104,12 @@
                                         </td>
                                         <td class="align-middle text-center">
                                             <span class="text-secondary text-xs font-weight-bold">
-                                                {{ $debitNote->created_at->format('M d, Y') }}
+                                                {{ $debitNote->created_at ? $debitNote->created_at->format('M d, Y') : 'N/A' }}
                                             </span>
                                         </td>
                                         <td class="align-middle text-center">
                                             <span class="text-secondary text-xs font-weight-bold">
-                                                {{ $debitNote->updated_at->format('M d, Y') }}
+                                                {{ $debitNote->updated_at ? $debitNote->updated_at->format('M d, Y') : 'N/A' }}
                                             </span>
                                         </td>
                                         <td class="align-middle text-center">

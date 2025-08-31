@@ -211,7 +211,7 @@
                                                             <h6 class="mb-0 text-sm">
                                                                 {{ $item->quotation->quotation_number ?? 'N/A' }}</h6>
                                                             <p class="text-xs text-secondary mb-0">
-                                                                {{ $item->quotation->quotation_date->format('M d, Y') ?? 'N/A' }}
+                                                                {{ $item->quotation->quotation_date ? $item->quotation->quotation_date->format('M d, Y') : 'N/A' }}
                                                             </p>
                                                         </div>
                                                     </div>
@@ -299,7 +299,7 @@
                                                             <h6 class="mb-0 text-sm">
                                                                 {{ $item->indent->indent_number ?? 'N/A' }}</h6>
                                                             <p class="text-xs text-secondary mb-0">
-                                                                {{ $item->indent->indent_date->format('M d, Y') ?? 'N/A' }}
+                                                                {{ $item->indent->indent_date ? $item->indent->indent_date->format('M d, Y') : 'N/A' }}
                                                             </p>
                                                         </div>
                                                     </div>

@@ -152,7 +152,7 @@
                                                 </td>
                                                 <td>
                                                     <p class="text-xs font-weight-bold mb-0">
-                                                        {{ $quotation->quotation_date->format('M d, Y') }}</p>
+                                                        {{ $quotation->quotation_date ? $quotation->quotation_date->format('M d, Y') : 'N/A' }}</p>
                                                 </td>
                                                 <td class="align-middle text-center text-sm">
                                                     @if ($quotation->status === 'pending')
@@ -230,7 +230,7 @@
                                                 </td>
                                                 <td>
                                                     <p class="text-xs font-weight-bold mb-0">
-                                                        {{ $indent->indent_date->format('M d, Y') }}</p>
+                                                        {{ $indent->indent_date ? $indent->indent_date->format('M d, Y') : 'N/A' }}</p>
                                                 </td>
                                                 <td class="align-middle text-center text-sm">
                                                     @if ($indent->status === 'pending')

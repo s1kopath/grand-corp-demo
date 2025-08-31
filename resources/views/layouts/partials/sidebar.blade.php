@@ -5,7 +5,7 @@
             aria-hidden="true" id="iconSidenav">close</i>
         <a class="navbar-brand m-0" href="{{ route('dashboard') }}">
             <img src="{{ asset('assets/img/1656314585924.jpeg') }}" class="navbar-brand-img h-100 ms-4" alt="main_logo">
-            <span class="ms-1 font-weight-bold">PharmaCorp IMS</span>
+            <span class="ms-1 font-weight-bold">Grand Corp IMS</span>
         </a>
     </div>
     <hr class="horizontal dark mt-0">

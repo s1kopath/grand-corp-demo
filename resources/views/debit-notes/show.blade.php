@@ -49,12 +49,15 @@
                                 </div>
                                 <div class="col-6">
                                     <p class="text-sm mb-1"><strong>Issue Date:</strong></p>
-                                    <p class="text-sm text-secondary mb-3">{{ $debitNote->issue_date->format('M d, Y') }}
+                                    <p class="text-sm text-secondary mb-3">
+                                        {{ $debitNote->issue_date ? $debitNote->issue_date->format('M d, Y') : 'N/A' }}
                                     </p>
                                 </div>
                                 <div class="col-6">
                                     <p class="text-sm mb-1"><strong>Due Date:</strong></p>
-                                    <p class="text-sm text-secondary mb-3">{{ $debitNote->due_date->format('M d, Y') }}</p>
+                                    <p class="text-sm text-secondary mb-3">
+                                        {{ $debitNote->due_date ? $debitNote->due_date->format('M d, Y') : 'N/A' }}
+                                    </p>
                                 </div>
                                 <div class="col-6">
                                     <p class="text-sm mb-1"><strong>Reference Number:</strong></p>
@@ -337,7 +340,8 @@
                                                         <div class="d-flex px-2 py-1">
                                                             <div class="d-flex flex-column justify-content-center">
                                                                 <h6 class="mb-0 text-sm">
-                                                                    {{ $entry->entry_date->format('M d, Y') }}</h6>
+                                                                    {{ $entry->entry_date ? $entry->entry_date->format('M d, Y') : 'N/A' }}
+                                                                </h6>
                                                             </div>
                                                         </div>
                                                     </td>
@@ -437,7 +441,7 @@
                                     <div class="timeline-content">
                                         <h6 class="text-dark text-sm font-weight-bold mb-0">Debit Note Created</h6>
                                         <p class="text-secondary font-weight-bold text-xs mt-1 mb-0">
-                                            {{ $debitNote->issue_date->format('M d, Y') }}
+                                            {{ $debitNote->issue_date ? $debitNote->issue_date->format('M d, Y') : 'N/A' }}
                                         </p>
                                     </div>
                                 </div>
