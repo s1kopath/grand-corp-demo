@@ -36,4 +36,9 @@ class QuotationItem extends Model
     {
         return $this->qty * $this->price;
     }
+    
+    public function principal(): BelongsTo
+    {
+        return $this->belongsTo(Principal::class);
+    }
 }
