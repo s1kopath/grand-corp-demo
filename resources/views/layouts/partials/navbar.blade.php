@@ -26,16 +26,21 @@
             </div>
             <ul class="navbar-nav justify-content-end">
                 <li class="nav-item d-flex align-items-center">
+                    <a href="/landing-page" class="badge badge-sm bg-gradient-warning ms-2">
+                        BROWSE WEBSITE
+                    </a>
+                </li>
+                {{-- <li class="nav-item d-flex align-items-center">
                     <a href="javascript:;" class="nav-link text-body font-weight-bold px-0">
                         <i class="fa fa-user me-sm-1"></i>
                         <span class="d-sm-inline d-none">{{ auth()->user()->name }}</span>
                     </a>
-                </li>
-                <li class="nav-item d-flex align-items-center">
+                </li> --}}
+                {{-- <li class="nav-item d-flex align-items-center">
                     <span class="badge badge-sm bg-gradient-{{ auth()->user()->role->color() }} ms-2">
                         {{ auth()->user()->role->label() }}
                     </span>
-                </li>
+                </li> --}}
                 <li class="nav-item d-flex align-items-center">
                     <a href="javascript:;" class="nav-link text-body p-0">
                         <i class="fa fa-cog fixed-plugin-button-nav cursor-pointer"></i>
@@ -127,7 +132,11 @@
                     <a href="javascript:;" class="nav-link text-body p-0" id="userDropdown" data-bs-toggle="dropdown"
                         aria-expanded="false">
                         <i class="fa fa-user me-sm-1"></i>
-                        <span class="d-sm-inline d-none">{{ auth()->user()->name }}</span>
+                        <span class="d-sm-inline d-none">{{ auth()->user()->name }}
+                            <svg class="ms-2" width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M6.70711 1.29289L11.2929 6.70711C11.6834 7.09763 11.6834 7.90237 11.2929 8.29289L6.70711 12.7071C6.31658 13.0976 5.68342 13.0976 5.29289 12.7071L0.707108 8.29289C0.316556 7.90237 0.316556 7.09763 0.707108 6.70711L6.70711 1.29289Z" fill="currentColor" />
+                            </svg>
+                        </span>
                     </a>
                     <ul class="dropdown-menu dropdown-menu-end px-2 py-3 me-sm-n4" aria-labelledby="userDropdown">
                         <li>
