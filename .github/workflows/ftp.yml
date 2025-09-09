@@ -20,4 +20,10 @@ jobs:
           username: ${{ secrets.PROD_USER }}
           password: ${{ secrets.PROD_PASS }}
           protocol: ftp
-          server-dir: /home/uurfogng/grand-corp.qtecsolution.net/
+          server-dir: ~/home/uurfogng/grand-corp.qtecsolution.net
+
+      - name: Run Laravel Migrations
+        run: |
+          ssh -i ~/.ssh/id_rsa -o StrictHostKeyChecking=no ${{ secrets.PROD_USER }}@${{ secrets.PROD_HOST }} \
+          "cd ~/home/uurfogng/grand-corp.qtecsolution.net && php artisan migrate --force"
+
