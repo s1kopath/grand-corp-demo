@@ -63,6 +63,18 @@
                                     </p>
                                 @endif
                             </form>
+                            <div class="mt-3">
+                                <div class="text-center mt-3">
+                                    <a href="/landing-page/index.html" class="btn btn-outline-primary w-100">
+                                        🌐 Visit The Demo Landing Page
+                                    </a>
+                                </div>
+                                <marquee behavior="scroll" direction="left" scrollamount="5" class="text-primary">
+                                    🎉 We also designed a beautiful <a href="/landing-page/index.html"
+                                        class="text-decoration-underline">Landing Page</a> — check it out!
+                                </marquee>
+                            </div>
+
                         </div>
                     </div>
                 </div>
