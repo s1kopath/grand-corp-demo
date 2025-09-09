@@ -20,7 +20,7 @@ jobs:
           username: ${{ secrets.PROD_USER }}
           password: ${{ secrets.PROD_PASS }}
           protocol: ftp
-          server-dir: ~/home/uurfogng/grand-corp.qtecsolution.net
+          server-dir: /grand-corp.qtecsolution.net
 
       - name: Run Laravel Migrations
         run: |
