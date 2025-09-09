@@ -20,10 +20,5 @@ jobs:
           username: ${{ secrets.PROD_USER }}
           password: ${{ secrets.PROD_PASS }}
           protocol: ftp
-          server-dir: /grand-corp.qtecsolution.net/
-
-      - name: Run Laravel Migrations
-        run: |
-          ssh -i ~/.ssh/id_rsa -o StrictHostKeyChecking=no ${{ secrets.PROD_USER }}@${{ secrets.PROD_HOST }} \
-          "cd ~/home/uurfogng/grand-corp.qtecsolution.net && php artisan migrate --force"
-
+          server-dir: /grand-corp.qtecsolution.net/ # 👈 FTP server directory only the path access given to account
+          state-name: .ftp-deploy-sync-state.json   # 👈 keeps track of last deploy
