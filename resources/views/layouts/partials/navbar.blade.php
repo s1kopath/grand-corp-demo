@@ -26,7 +26,7 @@
             </div>
             <ul class="navbar-nav justify-content-end">
                 <li class="nav-item d-flex align-items-center">
-                    <a href="/landing-page" class="badge badge-sm bg-gradient-warning ms-2">
+                    <a href="/landing-page/index.html" class="badge badge-sm bg-gradient-warning ms-2">
                         BROWSE WEBSITE
                     </a>
                 </li>
