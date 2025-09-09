@@ -1,0 +1,23 @@
+name: 🚀 Deploy to cPanel via FTP
+
+on:
+  push:
+    branches:
+      - production
+
+jobs:
+  ftp-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: FTP Deploy
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.4
+        with:
+          server: ${{ secrets.CPANEL_FTP_HOST }}
+          username: ${{ secrets.PROD_USER }}
+          password: ${{ secrets.PROD_PASS }}
+          protocol: ftp
+          server-dir: /home/uurfogng/grand-corp.qtecsolution.net/

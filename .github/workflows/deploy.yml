@@ -1,9 +1,9 @@
 name: CPANEL DEPLOYMENT
 
-on:
-  push:
-    branches:
-      - production
+# on:
+#   push:
+#     branches:
+#       - production
 
 jobs:
   deploy:
@@ -21,7 +21,7 @@ jobs:
           password: ${{ secrets.PROD_PASS }}
           # KEY: ${{ secrets.PROD_SSH_SECRET_KEY }}
           source: "."
-          target: "/home/uurfogng/grand-corp.qtecsolution.net"
+          target: "/home/uurfogng/grand-corp.qtecsolution.net/"
 
       - name: executing laravel deployement commands
         uses: appleboy/ssh-action@master
@@ -32,7 +32,7 @@ jobs:
           password: ${{ secrets.PROD_PASS }}
           # KEY: ${{ secrets.PROD_SSH_SECRET_KEY }}
           script: |
-            cd /home/uurfogng/grand-corp.qtecsolution.net
+            cd /home/uurfogng/grand-corp.qtecsolution.net/
             echo "creating env file...."
             php -r "file_exists('.env') || copy('.env.example', '.env');"
             echo "executing composer install...."
