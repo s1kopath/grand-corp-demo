@@ -58,8 +58,9 @@
                                 @if (Route::has('password.request'))
                                     <p class="mt-2 text-sm text-center">
                                         <a href="{{ route('password.request') }}"
-                                            class="text-primary bg-brand-secondary text-gradient font-weight-bold">Forgot
-                                            your password?</a>
+                                            class="text-primary bg-brand-secondary text-gradient font-weight-bold">
+                                            Forgot your password?
+                                        </a>
                                     </p>
                                 @endif
                             </form>
@@ -71,10 +72,10 @@
                                 </div>
                                 <marquee behavior="scroll" direction="left" scrollamount="5" class="text-primary">
                                     🎉 We also designed a beautiful <a href="/landing-page/index.html"
-                                        class="text-decoration-underline">Landing Page</a> — check it out!
+                                        class="text-decoration-underline">Landing Page</a> — check it out! It features
+                                    a clean and modern design, perfect for showcasing your products or services.
                                 </marquee>
                             </div>
-
                         </div>
                     </div>
                 </div>
